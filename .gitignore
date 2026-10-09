@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+*.local.db
+*.local.db-*
+.env
+.env*.local
+coverage/
+.vercel/
+.superpowers/
