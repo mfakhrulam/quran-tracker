@@ -4,12 +4,12 @@ import { users } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getDummyHash, verifyPassword } from "@/lib/auth/password";
 import { createSession, SESSION_COOKIE } from "@/lib/auth/session";
-import { checkRateLimit, recordFailure, resetRateLimit } from "@/lib/auth/rate-limit";
+import { checkRateLimit, getClientKey, recordFailure, resetRateLimit } from "@/lib/auth/rate-limit";
 
 const bodySchema = z.object({ username: z.string().min(1), password: z.string().min(1) });
 
 export async function loginHandler(req: Request): Promise<Response> {
-  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
+  const ip = getClientKey(req);
   if (!checkRateLimit(ip).allowed) {
     return Response.json({ error: "Terlalu banyak percobaan. Coba lagi nanti." }, { status: 429 });
   }

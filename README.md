@@ -4,7 +4,7 @@ Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Fase 1 m
 
 ## Prasyarat
 
-- **Node.js 22** (disarankan versi LTS terbaru dari seri 22)
+- **Node.js >= 22.9** (disarankan 24 LTS)
 - **pnpm** (manajer paket proyek ini)
 
 ## Setup Lokal
@@ -21,7 +21,7 @@ Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Fase 1 m
    Copy-Item .env.example .env
    ```
 
-   Minimal isi `SESSION_SECRET` dengan string acak 32+ karakter (`openssl rand -base64 32`). Untuk lokal, `DATABASE_URL` biarkan `file:./local.db` dan `DATABASE_AUTH_TOKEN` kosong. Atur `OWNER_USERNAME` dan `OWNER_PASSWORD` untuk akun pemilik.
+   Minimal isi `SESSION_SECRET` dengan string acak 32+ karakter — ganti placeholder `ganti-dengan-secret` di `.env.example` dengan hasil `openssl rand -base64 32`. Untuk lokal, `DATABASE_URL` biarkan `file:./local.db` dan `DATABASE_AUTH_TOKEN` kosong. Atur `OWNER_USERNAME` dan `OWNER_PASSWORD` untuk akun pemilik.
 
 3. Buat migrasi (bila skema berubah) dan jalankan migrasi ke database lokal:
 
@@ -52,6 +52,14 @@ Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Fase 1 m
 
 ## Deploy (Turso + Vercel)
 
+0. **Prasyarat CLI Turso**: pasang Turso CLI lalu autentikasi sebelum langkah di bawah:
+
+   ```powershell
+   # Windows (Scoop)
+   scoop install turso
+   turso auth login
+   ```
+
 1. **Buat database Turso** dan dapatkan kredensialnya:
 
    ```powershell
@@ -77,6 +85,10 @@ Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Fase 1 m
    Setelah seed selesai, `OWNER_USERNAME`/`OWNER_PASSWORD` tidak lagi diperlukan di produksi.
 
 4. Deploy proyek ke Vercel seperti biasa.
+
+## Batasan
+
+- **Rate limiter in-memory per-instance.** Pembatasan percobaan login disimpan di memori proses, sehingga pada Vercel serverless (banyak instance) hanya bersifat best-effort. Store bersama (DB/Upstash) direncanakan pada fase berikutnya.
 
 ## Atribusi Data
 
