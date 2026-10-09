@@ -41,7 +41,7 @@ beforeAll(async () => {
 afterAll(() => { ctx.client.close(); safeRm(dir); });
 
 async function callLogin(body: unknown, ip = "9.9.9.9") {
-  const { loginHandler } = await import("@/app/api/auth/login/route");
+  const { loginHandler } = await import("@/app/api/auth/login/handler");
   return loginHandler(new Request("http://localhost/api/auth/login", {
     method: "POST", headers: { "content-type": "application/json", "x-forwarded-for": ip }, body: JSON.stringify(body),
   }));
