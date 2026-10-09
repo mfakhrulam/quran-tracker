@@ -40,10 +40,10 @@ beforeAll(async () => {
 });
 afterAll(() => { ctx.client.close(); safeRm(dir); });
 
-async function callLogin(body: unknown) {
+async function callLogin(body: unknown, ip = "9.9.9.9") {
   const { loginHandler } = await import("@/app/api/auth/login/route");
   return loginHandler(new Request("http://localhost/api/auth/login", {
-    method: "POST", headers: { "content-type": "application/json", "x-forwarded-for": "9.9.9.9" }, body: JSON.stringify(body),
+    method: "POST", headers: { "content-type": "application/json", "x-forwarded-for": ip }, body: JSON.stringify(body),
   }));
 }
 
@@ -62,5 +62,20 @@ describe("login handler", () => {
   it("body tidak valid (400)", async () => {
     const res = await callLogin({ username: "" });
     expect(res.status).toBe(400);
+  });
+  it("memblokir dengan 429 setelah 5 percobaan gagal", async () => {
+    const ip = "7.7.7.7";
+    for (let i = 0; i < 5; i++) {
+      const res = await callLogin({ username: "owner", password: "salah" }, ip);
+      expect(res.status).toBe(401);
+    }
+    const blocked = await callLogin({ username: "owner", password: "salah" }, ip);
+    expect(blocked.status).toBe(429);
+    expect(await blocked.json()).toEqual({ error: "Terlalu banyak percobaan. Coba lagi nanti." });
+  });
+  it("tidak membocorkan keberadaan username: 401 seragam untuk user tak dikenal", async () => {
+    const res = await callLogin({ username: "tidak-ada", password: "apa-saja" }, "8.8.8.8");
+    expect(res.status).toBe(401);
+    expect(await res.json()).toEqual({ error: "Username atau password salah" });
   });
 });

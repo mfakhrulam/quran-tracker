@@ -2,7 +2,7 @@ import { eq } from "drizzle-orm";
 import { z } from "zod";
 import { users } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
-import { verifyPassword } from "@/lib/auth/password";
+import { getDummyHash, verifyPassword } from "@/lib/auth/password";
 import { createSession, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit, recordFailure, resetRateLimit } from "@/lib/auth/rate-limit";
 
@@ -19,7 +19,8 @@ export async function loginHandler(req: Request): Promise<Response> {
   const db = getDb();
   const found = await db.select().from(users).where(eq(users.username, parsed.data.username));
   const user = found[0];
-  const ok = user ? await verifyPassword(user.passwordHash, parsed.data.password) : false;
+  const hashToVerify = user ? user.passwordHash : await getDummyHash();
+  const ok = await verifyPassword(hashToVerify, parsed.data.password);
   if (!user || !ok) {
     recordFailure(ip);
     return Response.json({ error: "Username atau password salah" }, { status: 401 });

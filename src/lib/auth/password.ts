@@ -7,3 +7,12 @@ export function hashPassword(password: string): Promise<string> {
 export function verifyPassword(hashStr: string, password: string): Promise<boolean> {
   return verify(hashStr, password);
 }
+
+let dummyHashPromise: Promise<string> | null = null;
+
+export function getDummyHash(): Promise<string> {
+  if (!dummyHashPromise) {
+    dummyHashPromise = hashPassword("timing-guard-dummy-password");
+  }
+  return dummyHashPromise;
+}
