@@ -80,7 +80,8 @@ quran-tracker/
 ### Task 1: Scaffold proyek & tooling
 
 **Files:**
-- Create: `package.json`, `tsconfig.json`, `next.config.ts`, `postcss.config.mjs`, `src/app/globals.css`, `src/app/layout.tsx`, `src/app/page.tsx`, `vitest.config.ts`, `.gitignore`, `.env.example`
+- Create: `package.json`, `tsconfig.json`, `next.config.ts`, `postcss.config.mjs`, `.eslintrc.json`, `src/app/globals.css`, `src/app/layout.tsx`, `src/app/page.tsx`, `vitest.config.ts`, `.gitignore`
+- Note: `.env.example` dibuat di Task 9, bukan di sini.
 
 **Interfaces:**
 - Produces: proyek yang bisa `pnpm dev`, `pnpm build`, `pnpm lint`, `pnpm test`.
@@ -176,11 +177,19 @@ export default { plugins: { "@tailwindcss/postcss": {} } };
 `vitest.config.ts`:
 ```ts
 import { defineConfig } from "vitest/config";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 export default defineConfig({
   test: { environment: "node", include: ["tests/**/*.test.ts"] },
-  resolve: { alias: { "@": path.resolve(__dirname, "src") } },
+  resolve: { alias: { "@": path.resolve(path.dirname(fileURLToPath(import.meta.url)), "src") } },
 });
+```
+
+`.eslintrc.json` (agar `next lint` tidak interaktif):
+```json
+{
+  "extends": "next/core-web-vitals"
+}
 ```
 
 - [ ] **Step 5: Tulis app shell**
@@ -388,18 +397,19 @@ export function createDb(url: string, authToken?: string): { client: Client; db:
 `drizzle.config.ts`:
 ```ts
 import { defineConfig } from "drizzle-kit";
-import { loadEnv } from "./src/lib/env";
 
 export default defineConfig({
   schema: "./src/db/schema.ts",
   out: "./drizzle",
   dialect: "turso",
   dbCredentials: {
-    url: loadEnv().DATABASE_URL,
-    authToken: loadEnv().DATABASE_AUTH_TOKEN,
+    url: process.env.DATABASE_URL ?? "file:./local.db",
+    authToken: process.env.DATABASE_AUTH_TOKEN,
   },
 });
 ```
+
+> Catatan: `drizzle.config.ts` sengaja tidak memakai `loadEnv()` karena `drizzle-kit generate` dijalankan sebelum `.env` ada (Task 2), dan generate tidak butuh kredensial DB nyata. `scripts/migrate.ts` tetap memakai `loadEnv()` karena hanya dijalankan saat `.env` sudah terisi.
 
 `scripts/migrate.ts`:
 ```ts
@@ -725,7 +735,7 @@ import { join } from "node:path";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import { createDb } from "@/db/client";
 import { pages, users } from "@/db/schema";
-import { seed } from "@/scripts/seed-db";
+import { seed } from "../scripts/seed-db";
 
 let dir: string;
 let ctx: ReturnType<typeof createDb>;
@@ -771,6 +781,8 @@ Expected: FAIL — `seed` belum ada.
 `scripts/seed-db.ts`:
 ```ts
 import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 import { eq } from "drizzle-orm";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import type { LibSQLDatabase } from "drizzle-orm/libsql";
@@ -815,7 +827,7 @@ async function main() {
   console.log("Seed selesai.");
 }
 
-if (import.meta.url === `file://${process.argv[1]?.replace(/\\/g, "/")}`) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
   main().catch((e) => { console.error(e); process.exit(1); });
 }
 ```
@@ -1078,7 +1090,7 @@ import { z } from "zod";
 import { users } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { verifyPassword } from "@/lib/auth/password";
-import { createSession, SESSION_COOKIE, SESSION_TTL_DAYS } from "@/lib/auth/session";
+import { createSession, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit, recordFailure, resetRateLimit } from "@/lib/auth/rate-limit";
 
 const bodySchema = z.object({ username: z.string().min(1), password: z.string().min(1) });
