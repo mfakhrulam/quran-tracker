@@ -63,4 +63,19 @@ describe("goals API", () => {
     const activeKhatam = rows.filter((g) => g.type === "khatam" && g.active);
     expect(activeKhatam).toHaveLength(1);
   });
+  it("PATCH mengaktifkan khatam menonaktifkan khatam aktif lain", async () => {
+    const a = (await (await create({ type: "khatam", targetPages: 604, startDate: "2026-10-12", deadline: "2026-12-31" })).json()).goal;
+    await create({ type: "khatam", targetPages: 604, startDate: "2026-10-13", deadline: "2026-12-31" });
+
+    const { updateGoalHandler } = await import("@/app/api/goals/[id]/handler");
+    const res = await updateGoalHandler(new Request(`http://localhost/api/goals/${a.id}`, {
+      method: "PATCH", headers: { "content-type": "application/json", cookie }, body: JSON.stringify({ active: true }),
+    }), a.id);
+    expect(res.status).toBe(200);
+
+    const rows = await ctx.db.select().from(goals);
+    const activeKhatam = rows.filter((g) => g.type === "khatam" && g.active);
+    expect(activeKhatam).toHaveLength(1);
+    expect(activeKhatam[0].id).toBe(a.id);
+  });
 });

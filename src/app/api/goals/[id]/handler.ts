@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { and, eq, ne } from "drizzle-orm";
 import { z } from "zod";
 import { goals } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
@@ -17,6 +17,13 @@ export async function updateGoalHandler(req: Request, id: number): Promise<Respo
   const db = getDb();
   const existing = await db.select().from(goals).where(eq(goals.id, id));
   if (existing.length === 0) return Response.json({ error: "Goal tidak ditemukan" }, { status: 404 });
+
+  if (parsed.data.active && existing[0].type === "khatam") {
+    await db
+      .update(goals)
+      .set({ active: false })
+      .where(and(eq(goals.type, "khatam"), eq(goals.active, true), ne(goals.id, id)));
+  }
 
   const updated = await db.update(goals).set({ active: parsed.data.active }).where(eq(goals.id, id)).returning();
   return Response.json({ goal: updated[0] });
