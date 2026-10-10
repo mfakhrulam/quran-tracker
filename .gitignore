@@ -9,5 +9,6 @@ local.db-*
 .env*.local
 coverage/
 .vercel/
+.worktrees/
 .superpowers/
 *.tsbuildinfo
