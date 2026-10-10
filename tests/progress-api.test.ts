@@ -66,4 +66,13 @@ describe("progress API", () => {
     expect(body.projection).not.toBeNull();
     expect(body.projection.remainingPages).toBe(603);
   });
+  it("projection null bila tidak ada goal khatam aktif", async () => {
+    const { eq } = await import("drizzle-orm");
+    await ctx.db.update(goals).set({ active: false }).where(eq(goals.type, "khatam"));
+    const { GET } = await import("@/app/api/progress/route");
+    const res = await GET(new Request("http://localhost/api/progress", { headers: { cookie } }));
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.projection).toBeNull();
+  });
 });

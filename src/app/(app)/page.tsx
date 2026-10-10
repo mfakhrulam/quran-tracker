@@ -3,7 +3,7 @@ import { and, eq } from "drizzle-orm";
 import { goals, restDays } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { computeProgress } from "@/lib/tracker/progress";
-import { computeProjection } from "@/lib/tracker/projection";
+import { computeProjection, STATUS_LABELS } from "@/lib/tracker/projection";
 import { todayISO } from "@/lib/tracker/date";
 
 function pct(value: number): string {
@@ -45,7 +45,7 @@ export default async function DashboardPage() {
         <h2 className="text-sm font-medium text-neutral-500">Status target</h2>
         {projection ? (
           <div className="mt-1 space-y-1 text-sm">
-            <p>Status: <span className="font-medium">{projection.status}</span></p>
+            <p>Status: <span className="font-medium">{STATUS_LABELS[projection.status]}</span></p>
             <p>Pace saat ini: {projection.pace.toFixed(2)} halaman/hari</p>
             <p>Sisa: {projection.remainingPages} halaman</p>
             <p>Estimasi selesai: {projection.projectedFinishDate ?? "-"}</p>

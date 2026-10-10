@@ -11,6 +11,13 @@ export interface ProjectionInput {
 
 export type ProjectionStatus = "belum-mulai" | "on-track" | "terlambat" | "tanpa-tenggat";
 
+export const STATUS_LABELS: Record<ProjectionStatus, string> = {
+  "on-track": "Sesuai jalur",
+  "belum-mulai": "Belum mulai",
+  terlambat: "Tertinggal",
+  "tanpa-tenggat": "Tanpa tenggat",
+};
+
 export interface Projection {
   remainingPages: number;
   effectiveDaysElapsed: number;

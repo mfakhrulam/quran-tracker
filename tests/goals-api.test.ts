@@ -53,6 +53,18 @@ async function create(body: unknown) {
 }
 
 describe("goals API", () => {
+  it("401 tanpa sesi", async () => {
+    const { createGoalHandler } = await import("@/app/api/goals/handler");
+    const res = await createGoalHandler(new Request("http://localhost/api/goals", {
+      method: "POST", headers: { "content-type": "application/json" },
+      body: JSON.stringify({ type: "khatam", targetPages: 604, startDate: "2026-10-10" }),
+    }));
+    expect(res.status).toBe(401);
+  });
+  it("menolak tenggat sebelum tanggal mulai", async () => {
+    const res = await create({ type: "khatam", targetPages: 604, startDate: "2026-10-10", deadline: "2026-10-01" });
+    expect(res.status).toBe(400);
+  });
   it("membuat goal khatam", async () => {
     const res = await create({ type: "khatam", targetPages: 604, startDate: "2026-10-10", deadline: "2026-12-31" });
     expect(res.status).toBe(201);

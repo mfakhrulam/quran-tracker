@@ -40,6 +40,7 @@ export default function SessionList({ sessions }: { sessions: SessionRow[] }) {
   }
 
   async function remove(id: number) {
+    if (!window.confirm("Hapus setoran ini?")) return;
     setError("");
     const res = await fetch(`/api/sessions/${id}`, { method: "DELETE" });
     if (!res.ok) setError("Gagal menghapus");

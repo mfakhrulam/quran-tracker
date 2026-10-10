@@ -1,5 +1,12 @@
 const MS_PER_DAY = 86_400_000;
 
+const JAKARTA_DATE = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "Asia/Jakarta",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
 function parseISO(iso: string): number {
   const [y, m, d] = iso.split("-").map(Number);
   return Date.UTC(y, m - 1, d);
@@ -11,7 +18,7 @@ function formatUTC(ms: number): string {
 }
 
 export function todayISO(now: Date = new Date()): string {
-  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  return JAKARTA_DATE.format(now);
 }
 
 export function isValidISODate(s: string): boolean {
@@ -32,10 +39,12 @@ export function daysBetween(a: string, b: string): number {
 export function countRestDaysInRange(restDays: string[], startISO: string, endISO: string): number {
   const start = parseISO(startISO);
   const end = parseISO(endISO);
-  return restDays.filter((r) => {
+  let count = 0;
+  for (const r of new Set(restDays)) {
     const t = parseISO(r);
-    return t >= start && t <= end;
-  }).length;
+    if (t >= start && t <= end) count += 1;
+  }
+  return count;
 }
 
 export function effectiveDaysElapsed(startISO: string, todayISOStr: string, restDays: string[]): number {

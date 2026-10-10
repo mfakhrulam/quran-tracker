@@ -3,7 +3,6 @@ import { QUALITY_COLORS, MEMO_STATUSES } from "@/lib/tracker/quality";
 export interface MapPage {
   pageNumber: number;
   juz: number;
-  surahStart: number;
   status: string;
 }
 
@@ -26,6 +25,7 @@ export default function ProgressMap({ pages }: { pages: MapPage[] }) {
               <div
                 key={p.pageNumber}
                 title={`Hal. ${p.pageNumber} — ${p.status}`}
+                aria-label={`Halaman ${p.pageNumber} — ${p.status}`}
                 className={`flex h-7 items-center justify-center rounded text-[10px] text-neutral-800 ${QUALITY_COLORS[p.status] ?? QUALITY_COLORS.belum}`}
               >
                 {p.pageNumber}

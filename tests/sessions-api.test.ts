@@ -64,6 +64,23 @@ describe("sessions API", () => {
     const res = await post({ date: "2026-10-10", pageNumber: 999, type: "sabaq", quality: "lancar" });
     expect(res.status).toBe(400);
   });
+  it("400 saat tanggal di masa depan", async () => {
+    const res = await post({ date: "2099-01-01", pageNumber: 1, type: "sabaq", quality: "lancar" });
+    expect(res.status).toBe(400);
+  });
+  it("400 saat rentang ayat di luar halaman", async () => {
+    const res = await post({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "lancar", ayahStart: 8, ayahEnd: 9 });
+    expect(res.status).toBe(400);
+  });
+  it("400 saat tanggal kalender tidak valid", async () => {
+    const res = await post({ date: "2026-13-45", pageNumber: 1, type: "sabaq", quality: "lancar" });
+    expect(res.status).toBe(400);
+  });
+  it("400 saat query daftar tidak valid", async () => {
+    const { listSessionsHandler } = await import("@/app/api/sessions/handler");
+    const res = await listSessionsHandler(new Request("http://localhost/api/sessions?pageNumber=999", { headers: { cookie } }));
+    expect(res.status).toBe(400);
+  });
   it("201 saat sukses & memperbarui status hafalan", async () => {
     const res = await post({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "mutqin" });
     expect(res.status).toBe(201);

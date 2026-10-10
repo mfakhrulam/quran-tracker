@@ -20,19 +20,21 @@ export async function createGoalHandler(req: Request): Promise<Response> {
   const data = parsed.data;
 
   const db = getDb();
-  if (data.type === "khatam") {
-    await db.update(goals).set({ active: false }).where(and(eq(goals.type, "khatam"), eq(goals.active, true)));
-  }
+  const inserted = await db.transaction(async (tx) => {
+    if (data.type === "khatam") {
+      await tx.update(goals).set({ active: false }).where(and(eq(goals.type, "khatam"), eq(goals.active, true)));
+    }
 
-  const inserted = await db
-    .insert(goals)
-    .values({
-      type: data.type,
-      targetPages: data.targetPages,
-      startDate: data.startDate,
-      deadline: data.deadline ?? null,
-      active: true,
-    })
-    .returning();
+    return tx
+      .insert(goals)
+      .values({
+        type: data.type,
+        targetPages: data.targetPages,
+        startDate: data.startDate,
+        deadline: data.deadline ?? null,
+        active: true,
+      })
+      .returning();
+  });
   return Response.json({ goal: inserted[0] }, { status: 201 });
 }

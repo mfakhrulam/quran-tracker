@@ -85,4 +85,68 @@ describe("sessions/[id] API", () => {
     }), 9999);
     expect(res.status).toBe(404);
   });
+
+  it("400 saat PATCH memakai tanggal masa depan", async () => {
+    const { createSessionLogHandler } = await import("@/app/api/sessions/handler");
+    const { updateSessionLogHandler } = await import("@/app/api/sessions/[id]/handler");
+    const created = await createSessionLogHandler(new Request("http://localhost/api/sessions", {
+      method: "POST", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "baru" }),
+    }));
+    const { session } = await created.json();
+    const res = await updateSessionLogHandler(new Request(`http://localhost/api/sessions/${session.id}`, {
+      method: "PATCH", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2099-01-01", pageNumber: 1, type: "sabaq", quality: "baru" }),
+    }), session.id);
+    expect(res.status).toBe(400);
+  });
+
+  it("400 saat PATCH memakai rentang ayat di luar halaman", async () => {
+    const { createSessionLogHandler } = await import("@/app/api/sessions/handler");
+    const { updateSessionLogHandler } = await import("@/app/api/sessions/[id]/handler");
+    const created = await createSessionLogHandler(new Request("http://localhost/api/sessions", {
+      method: "POST", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "baru" }),
+    }));
+    const { session } = await created.json();
+    const res = await updateSessionLogHandler(new Request(`http://localhost/api/sessions/${session.id}`, {
+      method: "PATCH", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "baru", ayahStart: 8, ayahEnd: 9 }),
+    }), session.id);
+    expect(res.status).toBe(400);
+  });
+
+  it("400 saat PATCH ke halaman yang tidak ada", async () => {
+    const { createSessionLogHandler } = await import("@/app/api/sessions/handler");
+    const { updateSessionLogHandler } = await import("@/app/api/sessions/[id]/handler");
+    const created = await createSessionLogHandler(new Request("http://localhost/api/sessions", {
+      method: "POST", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "baru" }),
+    }));
+    const { session } = await created.json();
+    const res = await updateSessionLogHandler(new Request(`http://localhost/api/sessions/${session.id}`, {
+      method: "PATCH", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 500, type: "sabaq", quality: "baru" }),
+    }), session.id);
+    expect(res.status).toBe(400);
+  });
+
+  it("PATCH tanpa durationMin mempertahankan nilai lama", async () => {
+    const { createSessionLogHandler } = await import("@/app/api/sessions/handler");
+    const { updateSessionLogHandler } = await import("@/app/api/sessions/[id]/handler");
+    const created = await createSessionLogHandler(new Request("http://localhost/api/sessions", {
+      method: "POST", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "baru", durationMin: 30 }),
+    }));
+    const { session } = await created.json();
+    expect(session.durationMin).toBe(30);
+
+    const res = await updateSessionLogHandler(new Request(`http://localhost/api/sessions/${session.id}`, {
+      method: "PATCH", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "lancar" }),
+    }), session.id);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.session.durationMin).toBe(30);
+  });
 });

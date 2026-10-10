@@ -46,6 +46,13 @@ beforeAll(async () => {
 afterAll(() => { ctx.client.close(); safeRm(dir); });
 
 describe("rest-days API", () => {
+  it("401 tanpa sesi", async () => {
+    const { createRestDayHandler } = await import("@/app/api/rest-days/handler");
+    const res = await createRestDayHandler(new Request("http://localhost/api/rest-days", {
+      method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ date: "2026-10-10" }),
+    }));
+    expect(res.status).toBe(401);
+  });
   it("menambah lalu menghapus hari libur", async () => {
     const { createRestDayHandler, deleteRestDayHandler } = await import("@/app/api/rest-days/handler");
     const created = await createRestDayHandler(new Request("http://localhost/api/rest-days", {

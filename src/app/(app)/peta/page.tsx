@@ -11,7 +11,6 @@ export default async function PetaPage() {
   const data = allPages.map((p) => ({
     pageNumber: p.pageNumber,
     juz: p.juz,
-    surahStart: p.surahStart,
     status: statusByPage.get(p.pageNumber) ?? "belum",
   }));
 

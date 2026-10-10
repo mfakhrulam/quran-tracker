@@ -2,8 +2,9 @@ import { describe, it, expect } from "vitest";
 import { todayISO, isValidISODate, addDays, daysBetween, countRestDaysInRange, effectiveDaysElapsed } from "@/lib/tracker/date";
 
 describe("tracker/date", () => {
-  it("todayISO memformat lokal sebagai YYYY-MM-DD", () => {
-    expect(todayISO(new Date(2026, 9, 10))).toBe("2026-10-10");
+  it("todayISO memformat tanggal di zona Asia/Jakarta sebagai YYYY-MM-DD", () => {
+    expect(todayISO(new Date("2026-10-10T05:00:00+07:00"))).toBe("2026-10-10");
+    expect(todayISO(new Date("2026-10-10T18:00:00Z"))).toBe("2026-10-11");
   });
   it("isValidISODate menolak format salah", () => {
     expect(isValidISODate("2026-10-10")).toBe(true);
@@ -19,6 +20,9 @@ describe("tracker/date", () => {
   });
   it("countRestDaysInRange menghitung hari libur dalam rentang inklusif", () => {
     expect(countRestDaysInRange(["2026-10-03", "2026-10-05", "2026-11-01"], "2026-10-01", "2026-10-10")).toBe(2);
+  });
+  it("countRestDaysInRange tidak menghitung duplikat dua kali", () => {
+    expect(countRestDaysInRange(["2026-10-03", "2026-10-03", "2026-10-05"], "2026-10-01", "2026-10-10")).toBe(2);
   });
   it("effectiveDaysElapsed mengurangi hari libur, minimal 1", () => {
     expect(effectiveDaysElapsed("2026-10-01", "2026-10-10", [])).toBe(10);
