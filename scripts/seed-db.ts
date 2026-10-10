@@ -5,13 +5,22 @@ import { eq } from "drizzle-orm";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import type { LibSQLDatabase } from "drizzle-orm/libsql";
 import { createDb } from "../src/db/client";
-import { pages, users } from "../src/db/schema";
+import { pages, users, settings } from "../src/db/schema";
 import { hashPassword } from "../src/lib/auth/password";
 import { loadEnv } from "../src/lib/env";
 import type * as schema from "../src/db/schema";
 import type { PageRow } from "../src/lib/mushaf/parse-tanzil";
 
 export interface SeedOptions { ownerUsername?: string; ownerPassword?: string; pagesPath?: string }
+
+export const DEFAULT_SETTINGS: Record<string, string> = {
+  sabqi_window_days: "14",
+  manzil_cycle_days: "7",
+  daily_load_limit: "2",
+  label_sabaq: "Sabaq",
+  label_sabqi: "Sabqi",
+  label_manzil: "Manzil",
+};
 
 export async function seed(db: LibSQLDatabase<typeof schema>, opts: SeedOptions = {}): Promise<void> {
   const path = opts.pagesPath ?? "src/data/pages.json";
@@ -26,6 +35,10 @@ export async function seed(db: LibSQLDatabase<typeof schema>, opts: SeedOptions 
       });
     }
   });
+
+  for (const [key, value] of Object.entries(DEFAULT_SETTINGS)) {
+    await db.insert(settings).values({ key, value }).onConflictDoNothing();
+  }
 
   if (opts.ownerUsername && opts.ownerPassword) {
     const existing = await db.select().from(users).where(eq(users.username, opts.ownerUsername));

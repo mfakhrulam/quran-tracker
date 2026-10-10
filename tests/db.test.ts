@@ -7,7 +7,7 @@ import vm from "node:vm";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import { eq } from "drizzle-orm";
 import { createDb } from "@/db/client";
-import { pages, users } from "@/db/schema";
+import { pages, users, sessionsLog } from "@/db/schema";
 
 let dir: string;
 let ctx: ReturnType<typeof createDb>;
@@ -47,5 +47,12 @@ describe("schema", () => {
   it("username unik", async () => {
     await ctx.db.insert(users).values({ username: "owner", passwordHash: "x" });
     await expect(ctx.db.insert(users).values({ username: "owner", passwordHash: "y" })).rejects.toThrow();
+  });
+  it("menyimpan log dengan rentang ayat opsional", async () => {
+    await ctx.db.insert(sessionsLog).values({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "lancar" });
+    await ctx.db.insert(sessionsLog).values({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "mutqin", ayahStart: 1, ayahEnd: 3 });
+    const rows = await ctx.db.select().from(sessionsLog);
+    expect(rows.length).toBe(2);
+    expect(rows.find((r) => r.ayahStart === 1)?.ayahEnd).toBe(3);
   });
 });
