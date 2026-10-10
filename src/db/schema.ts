@@ -1,4 +1,4 @@
-import { sqliteTable, integer, text } from "drizzle-orm/sqlite-core";
+import { sqliteTable, integer, text, index } from "drizzle-orm/sqlite-core";
 
 export const users = sqliteTable("users", {
   id: integer("id").primaryKey({ autoIncrement: true }),
@@ -39,9 +39,14 @@ export const sessionsLog = sqliteTable("sessions_log", {
   pageNumber: integer("page_number").notNull(),
   type: text("type").notNull(),
   quality: text("quality").notNull(),
+  ayahStart: integer("ayah_start"),
+  ayahEnd: integer("ayah_end"),
   mistakesNote: text("mistakes_note"),
   durationMin: integer("duration_min"),
-});
+}, (t) => [
+  index("sessions_log_date_idx").on(t.date),
+  index("sessions_log_page_idx").on(t.pageNumber),
+]);
 
 export const goals = sqliteTable("goals", {
   id: integer("id").primaryKey({ autoIncrement: true }),
