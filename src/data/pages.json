@@ -1,0 +1,4834 @@
+[
+  {
+    "pageNumber": 1,
+    "juz": 1,
+    "surahStart": 1,
+    "ayahStart": 1,
+    "surahEnd": 1,
+    "ayahEnd": 7
+  },
+  {
+    "pageNumber": 2,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 1,
+    "surahEnd": 2,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 3,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 6,
+    "surahEnd": 2,
+    "ayahEnd": 16
+  },
+  {
+    "pageNumber": 4,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 17,
+    "surahEnd": 2,
+    "ayahEnd": 24
+  },
+  {
+    "pageNumber": 5,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 25,
+    "surahEnd": 2,
+    "ayahEnd": 29
+  },
+  {
+    "pageNumber": 6,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 30,
+    "surahEnd": 2,
+    "ayahEnd": 37
+  },
+  {
+    "pageNumber": 7,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 38,
+    "surahEnd": 2,
+    "ayahEnd": 48
+  },
+  {
+    "pageNumber": 8,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 49,
+    "surahEnd": 2,
+    "ayahEnd": 57
+  },
+  {
+    "pageNumber": 9,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 58,
+    "surahEnd": 2,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 10,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 62,
+    "surahEnd": 2,
+    "ayahEnd": 69
+  },
+  {
+    "pageNumber": 11,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 70,
+    "surahEnd": 2,
+    "ayahEnd": 76
+  },
+  {
+    "pageNumber": 12,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 77,
+    "surahEnd": 2,
+    "ayahEnd": 83
+  },
+  {
+    "pageNumber": 13,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 84,
+    "surahEnd": 2,
+    "ayahEnd": 88
+  },
+  {
+    "pageNumber": 14,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 89,
+    "surahEnd": 2,
+    "ayahEnd": 93
+  },
+  {
+    "pageNumber": 15,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 94,
+    "surahEnd": 2,
+    "ayahEnd": 101
+  },
+  {
+    "pageNumber": 16,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 102,
+    "surahEnd": 2,
+    "ayahEnd": 105
+  },
+  {
+    "pageNumber": 17,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 106,
+    "surahEnd": 2,
+    "ayahEnd": 112
+  },
+  {
+    "pageNumber": 18,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 113,
+    "surahEnd": 2,
+    "ayahEnd": 119
+  },
+  {
+    "pageNumber": 19,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 120,
+    "surahEnd": 2,
+    "ayahEnd": 126
+  },
+  {
+    "pageNumber": 20,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 127,
+    "surahEnd": 2,
+    "ayahEnd": 134
+  },
+  {
+    "pageNumber": 21,
+    "juz": 1,
+    "surahStart": 2,
+    "ayahStart": 135,
+    "surahEnd": 2,
+    "ayahEnd": 141
+  },
+  {
+    "pageNumber": 22,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 142,
+    "surahEnd": 2,
+    "ayahEnd": 145
+  },
+  {
+    "pageNumber": 23,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 146,
+    "surahEnd": 2,
+    "ayahEnd": 153
+  },
+  {
+    "pageNumber": 24,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 154,
+    "surahEnd": 2,
+    "ayahEnd": 163
+  },
+  {
+    "pageNumber": 25,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 164,
+    "surahEnd": 2,
+    "ayahEnd": 169
+  },
+  {
+    "pageNumber": 26,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 170,
+    "surahEnd": 2,
+    "ayahEnd": 176
+  },
+  {
+    "pageNumber": 27,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 177,
+    "surahEnd": 2,
+    "ayahEnd": 181
+  },
+  {
+    "pageNumber": 28,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 182,
+    "surahEnd": 2,
+    "ayahEnd": 186
+  },
+  {
+    "pageNumber": 29,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 187,
+    "surahEnd": 2,
+    "ayahEnd": 190
+  },
+  {
+    "pageNumber": 30,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 191,
+    "surahEnd": 2,
+    "ayahEnd": 196
+  },
+  {
+    "pageNumber": 31,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 197,
+    "surahEnd": 2,
+    "ayahEnd": 202
+  },
+  {
+    "pageNumber": 32,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 203,
+    "surahEnd": 2,
+    "ayahEnd": 210
+  },
+  {
+    "pageNumber": 33,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 211,
+    "surahEnd": 2,
+    "ayahEnd": 215
+  },
+  {
+    "pageNumber": 34,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 216,
+    "surahEnd": 2,
+    "ayahEnd": 219
+  },
+  {
+    "pageNumber": 35,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 220,
+    "surahEnd": 2,
+    "ayahEnd": 224
+  },
+  {
+    "pageNumber": 36,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 225,
+    "surahEnd": 2,
+    "ayahEnd": 230
+  },
+  {
+    "pageNumber": 37,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 231,
+    "surahEnd": 2,
+    "ayahEnd": 233
+  },
+  {
+    "pageNumber": 38,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 234,
+    "surahEnd": 2,
+    "ayahEnd": 237
+  },
+  {
+    "pageNumber": 39,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 238,
+    "surahEnd": 2,
+    "ayahEnd": 245
+  },
+  {
+    "pageNumber": 40,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 246,
+    "surahEnd": 2,
+    "ayahEnd": 248
+  },
+  {
+    "pageNumber": 41,
+    "juz": 2,
+    "surahStart": 2,
+    "ayahStart": 249,
+    "surahEnd": 2,
+    "ayahEnd": 252
+  },
+  {
+    "pageNumber": 42,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 253,
+    "surahEnd": 2,
+    "ayahEnd": 256
+  },
+  {
+    "pageNumber": 43,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 257,
+    "surahEnd": 2,
+    "ayahEnd": 259
+  },
+  {
+    "pageNumber": 44,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 260,
+    "surahEnd": 2,
+    "ayahEnd": 264
+  },
+  {
+    "pageNumber": 45,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 265,
+    "surahEnd": 2,
+    "ayahEnd": 269
+  },
+  {
+    "pageNumber": 46,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 270,
+    "surahEnd": 2,
+    "ayahEnd": 274
+  },
+  {
+    "pageNumber": 47,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 275,
+    "surahEnd": 2,
+    "ayahEnd": 281
+  },
+  {
+    "pageNumber": 48,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 282,
+    "surahEnd": 2,
+    "ayahEnd": 282
+  },
+  {
+    "pageNumber": 49,
+    "juz": 3,
+    "surahStart": 2,
+    "ayahStart": 283,
+    "surahEnd": 2,
+    "ayahEnd": 286
+  },
+  {
+    "pageNumber": 50,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 1,
+    "surahEnd": 3,
+    "ayahEnd": 9
+  },
+  {
+    "pageNumber": 51,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 10,
+    "surahEnd": 3,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 52,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 16,
+    "surahEnd": 3,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 53,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 23,
+    "surahEnd": 3,
+    "ayahEnd": 29
+  },
+  {
+    "pageNumber": 54,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 30,
+    "surahEnd": 3,
+    "ayahEnd": 37
+  },
+  {
+    "pageNumber": 55,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 38,
+    "surahEnd": 3,
+    "ayahEnd": 45
+  },
+  {
+    "pageNumber": 56,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 46,
+    "surahEnd": 3,
+    "ayahEnd": 52
+  },
+  {
+    "pageNumber": 57,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 53,
+    "surahEnd": 3,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 58,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 62,
+    "surahEnd": 3,
+    "ayahEnd": 70
+  },
+  {
+    "pageNumber": 59,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 71,
+    "surahEnd": 3,
+    "ayahEnd": 77
+  },
+  {
+    "pageNumber": 60,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 78,
+    "surahEnd": 3,
+    "ayahEnd": 83
+  },
+  {
+    "pageNumber": 61,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 84,
+    "surahEnd": 3,
+    "ayahEnd": 91
+  },
+  {
+    "pageNumber": 62,
+    "juz": 3,
+    "surahStart": 3,
+    "ayahStart": 92,
+    "surahEnd": 3,
+    "ayahEnd": 100
+  },
+  {
+    "pageNumber": 63,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 101,
+    "surahEnd": 3,
+    "ayahEnd": 108
+  },
+  {
+    "pageNumber": 64,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 109,
+    "surahEnd": 3,
+    "ayahEnd": 115
+  },
+  {
+    "pageNumber": 65,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 116,
+    "surahEnd": 3,
+    "ayahEnd": 121
+  },
+  {
+    "pageNumber": 66,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 122,
+    "surahEnd": 3,
+    "ayahEnd": 132
+  },
+  {
+    "pageNumber": 67,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 133,
+    "surahEnd": 3,
+    "ayahEnd": 140
+  },
+  {
+    "pageNumber": 68,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 141,
+    "surahEnd": 3,
+    "ayahEnd": 148
+  },
+  {
+    "pageNumber": 69,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 149,
+    "surahEnd": 3,
+    "ayahEnd": 153
+  },
+  {
+    "pageNumber": 70,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 154,
+    "surahEnd": 3,
+    "ayahEnd": 157
+  },
+  {
+    "pageNumber": 71,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 158,
+    "surahEnd": 3,
+    "ayahEnd": 165
+  },
+  {
+    "pageNumber": 72,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 166,
+    "surahEnd": 3,
+    "ayahEnd": 173
+  },
+  {
+    "pageNumber": 73,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 174,
+    "surahEnd": 3,
+    "ayahEnd": 180
+  },
+  {
+    "pageNumber": 74,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 181,
+    "surahEnd": 3,
+    "ayahEnd": 186
+  },
+  {
+    "pageNumber": 75,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 187,
+    "surahEnd": 3,
+    "ayahEnd": 194
+  },
+  {
+    "pageNumber": 76,
+    "juz": 4,
+    "surahStart": 3,
+    "ayahStart": 195,
+    "surahEnd": 3,
+    "ayahEnd": 200
+  },
+  {
+    "pageNumber": 77,
+    "juz": 4,
+    "surahStart": 4,
+    "ayahStart": 1,
+    "surahEnd": 4,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 78,
+    "juz": 4,
+    "surahStart": 4,
+    "ayahStart": 7,
+    "surahEnd": 4,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 79,
+    "juz": 4,
+    "surahStart": 4,
+    "ayahStart": 12,
+    "surahEnd": 4,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 80,
+    "juz": 4,
+    "surahStart": 4,
+    "ayahStart": 15,
+    "surahEnd": 4,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 81,
+    "juz": 4,
+    "surahStart": 4,
+    "ayahStart": 20,
+    "surahEnd": 4,
+    "ayahEnd": 23
+  },
+  {
+    "pageNumber": 82,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 24,
+    "surahEnd": 4,
+    "ayahEnd": 26
+  },
+  {
+    "pageNumber": 83,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 27,
+    "surahEnd": 4,
+    "ayahEnd": 33
+  },
+  {
+    "pageNumber": 84,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 34,
+    "surahEnd": 4,
+    "ayahEnd": 37
+  },
+  {
+    "pageNumber": 85,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 38,
+    "surahEnd": 4,
+    "ayahEnd": 44
+  },
+  {
+    "pageNumber": 86,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 45,
+    "surahEnd": 4,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 87,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 52,
+    "surahEnd": 4,
+    "ayahEnd": 59
+  },
+  {
+    "pageNumber": 88,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 60,
+    "surahEnd": 4,
+    "ayahEnd": 65
+  },
+  {
+    "pageNumber": 89,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 66,
+    "surahEnd": 4,
+    "ayahEnd": 74
+  },
+  {
+    "pageNumber": 90,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 75,
+    "surahEnd": 4,
+    "ayahEnd": 79
+  },
+  {
+    "pageNumber": 91,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 80,
+    "surahEnd": 4,
+    "ayahEnd": 86
+  },
+  {
+    "pageNumber": 92,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 87,
+    "surahEnd": 4,
+    "ayahEnd": 91
+  },
+  {
+    "pageNumber": 93,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 92,
+    "surahEnd": 4,
+    "ayahEnd": 94
+  },
+  {
+    "pageNumber": 94,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 95,
+    "surahEnd": 4,
+    "ayahEnd": 101
+  },
+  {
+    "pageNumber": 95,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 102,
+    "surahEnd": 4,
+    "ayahEnd": 105
+  },
+  {
+    "pageNumber": 96,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 106,
+    "surahEnd": 4,
+    "ayahEnd": 113
+  },
+  {
+    "pageNumber": 97,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 114,
+    "surahEnd": 4,
+    "ayahEnd": 121
+  },
+  {
+    "pageNumber": 98,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 122,
+    "surahEnd": 4,
+    "ayahEnd": 127
+  },
+  {
+    "pageNumber": 99,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 128,
+    "surahEnd": 4,
+    "ayahEnd": 134
+  },
+  {
+    "pageNumber": 100,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 135,
+    "surahEnd": 4,
+    "ayahEnd": 140
+  },
+  {
+    "pageNumber": 101,
+    "juz": 5,
+    "surahStart": 4,
+    "ayahStart": 141,
+    "surahEnd": 4,
+    "ayahEnd": 147
+  },
+  {
+    "pageNumber": 102,
+    "juz": 6,
+    "surahStart": 4,
+    "ayahStart": 148,
+    "surahEnd": 4,
+    "ayahEnd": 154
+  },
+  {
+    "pageNumber": 103,
+    "juz": 6,
+    "surahStart": 4,
+    "ayahStart": 155,
+    "surahEnd": 4,
+    "ayahEnd": 162
+  },
+  {
+    "pageNumber": 104,
+    "juz": 6,
+    "surahStart": 4,
+    "ayahStart": 163,
+    "surahEnd": 4,
+    "ayahEnd": 170
+  },
+  {
+    "pageNumber": 105,
+    "juz": 6,
+    "surahStart": 4,
+    "ayahStart": 171,
+    "surahEnd": 4,
+    "ayahEnd": 175
+  },
+  {
+    "pageNumber": 106,
+    "juz": 6,
+    "surahStart": 4,
+    "ayahStart": 176,
+    "surahEnd": 5,
+    "ayahEnd": 2
+  },
+  {
+    "pageNumber": 107,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 3,
+    "surahEnd": 5,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 108,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 6,
+    "surahEnd": 5,
+    "ayahEnd": 9
+  },
+  {
+    "pageNumber": 109,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 10,
+    "surahEnd": 5,
+    "ayahEnd": 13
+  },
+  {
+    "pageNumber": 110,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 14,
+    "surahEnd": 5,
+    "ayahEnd": 17
+  },
+  {
+    "pageNumber": 111,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 18,
+    "surahEnd": 5,
+    "ayahEnd": 23
+  },
+  {
+    "pageNumber": 112,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 24,
+    "surahEnd": 5,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 113,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 32,
+    "surahEnd": 5,
+    "ayahEnd": 36
+  },
+  {
+    "pageNumber": 114,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 37,
+    "surahEnd": 5,
+    "ayahEnd": 41
+  },
+  {
+    "pageNumber": 115,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 42,
+    "surahEnd": 5,
+    "ayahEnd": 45
+  },
+  {
+    "pageNumber": 116,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 46,
+    "surahEnd": 5,
+    "ayahEnd": 50
+  },
+  {
+    "pageNumber": 117,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 51,
+    "surahEnd": 5,
+    "ayahEnd": 57
+  },
+  {
+    "pageNumber": 118,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 58,
+    "surahEnd": 5,
+    "ayahEnd": 64
+  },
+  {
+    "pageNumber": 119,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 65,
+    "surahEnd": 5,
+    "ayahEnd": 70
+  },
+  {
+    "pageNumber": 120,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 71,
+    "surahEnd": 5,
+    "ayahEnd": 76
+  },
+  {
+    "pageNumber": 121,
+    "juz": 6,
+    "surahStart": 5,
+    "ayahStart": 77,
+    "surahEnd": 5,
+    "ayahEnd": 82
+  },
+  {
+    "pageNumber": 122,
+    "juz": 7,
+    "surahStart": 5,
+    "ayahStart": 83,
+    "surahEnd": 5,
+    "ayahEnd": 89
+  },
+  {
+    "pageNumber": 123,
+    "juz": 7,
+    "surahStart": 5,
+    "ayahStart": 90,
+    "surahEnd": 5,
+    "ayahEnd": 95
+  },
+  {
+    "pageNumber": 124,
+    "juz": 7,
+    "surahStart": 5,
+    "ayahStart": 96,
+    "surahEnd": 5,
+    "ayahEnd": 103
+  },
+  {
+    "pageNumber": 125,
+    "juz": 7,
+    "surahStart": 5,
+    "ayahStart": 104,
+    "surahEnd": 5,
+    "ayahEnd": 108
+  },
+  {
+    "pageNumber": 126,
+    "juz": 7,
+    "surahStart": 5,
+    "ayahStart": 109,
+    "surahEnd": 5,
+    "ayahEnd": 113
+  },
+  {
+    "pageNumber": 127,
+    "juz": 7,
+    "surahStart": 5,
+    "ayahStart": 114,
+    "surahEnd": 5,
+    "ayahEnd": 120
+  },
+  {
+    "pageNumber": 128,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 1,
+    "surahEnd": 6,
+    "ayahEnd": 8
+  },
+  {
+    "pageNumber": 129,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 9,
+    "surahEnd": 6,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 130,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 19,
+    "surahEnd": 6,
+    "ayahEnd": 27
+  },
+  {
+    "pageNumber": 131,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 28,
+    "surahEnd": 6,
+    "ayahEnd": 35
+  },
+  {
+    "pageNumber": 132,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 36,
+    "surahEnd": 6,
+    "ayahEnd": 44
+  },
+  {
+    "pageNumber": 133,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 45,
+    "surahEnd": 6,
+    "ayahEnd": 52
+  },
+  {
+    "pageNumber": 134,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 53,
+    "surahEnd": 6,
+    "ayahEnd": 59
+  },
+  {
+    "pageNumber": 135,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 60,
+    "surahEnd": 6,
+    "ayahEnd": 68
+  },
+  {
+    "pageNumber": 136,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 69,
+    "surahEnd": 6,
+    "ayahEnd": 73
+  },
+  {
+    "pageNumber": 137,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 74,
+    "surahEnd": 6,
+    "ayahEnd": 81
+  },
+  {
+    "pageNumber": 138,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 82,
+    "surahEnd": 6,
+    "ayahEnd": 90
+  },
+  {
+    "pageNumber": 139,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 91,
+    "surahEnd": 6,
+    "ayahEnd": 94
+  },
+  {
+    "pageNumber": 140,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 95,
+    "surahEnd": 6,
+    "ayahEnd": 101
+  },
+  {
+    "pageNumber": 141,
+    "juz": 7,
+    "surahStart": 6,
+    "ayahStart": 102,
+    "surahEnd": 6,
+    "ayahEnd": 110
+  },
+  {
+    "pageNumber": 142,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 111,
+    "surahEnd": 6,
+    "ayahEnd": 118
+  },
+  {
+    "pageNumber": 143,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 119,
+    "surahEnd": 6,
+    "ayahEnd": 124
+  },
+  {
+    "pageNumber": 144,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 125,
+    "surahEnd": 6,
+    "ayahEnd": 131
+  },
+  {
+    "pageNumber": 145,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 132,
+    "surahEnd": 6,
+    "ayahEnd": 137
+  },
+  {
+    "pageNumber": 146,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 138,
+    "surahEnd": 6,
+    "ayahEnd": 142
+  },
+  {
+    "pageNumber": 147,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 143,
+    "surahEnd": 6,
+    "ayahEnd": 146
+  },
+  {
+    "pageNumber": 148,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 147,
+    "surahEnd": 6,
+    "ayahEnd": 151
+  },
+  {
+    "pageNumber": 149,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 152,
+    "surahEnd": 6,
+    "ayahEnd": 157
+  },
+  {
+    "pageNumber": 150,
+    "juz": 8,
+    "surahStart": 6,
+    "ayahStart": 158,
+    "surahEnd": 6,
+    "ayahEnd": 165
+  },
+  {
+    "pageNumber": 151,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 1,
+    "surahEnd": 7,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 152,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 12,
+    "surahEnd": 7,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 153,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 23,
+    "surahEnd": 7,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 154,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 31,
+    "surahEnd": 7,
+    "ayahEnd": 37
+  },
+  {
+    "pageNumber": 155,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 38,
+    "surahEnd": 7,
+    "ayahEnd": 43
+  },
+  {
+    "pageNumber": 156,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 44,
+    "surahEnd": 7,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 157,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 52,
+    "surahEnd": 7,
+    "ayahEnd": 57
+  },
+  {
+    "pageNumber": 158,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 58,
+    "surahEnd": 7,
+    "ayahEnd": 67
+  },
+  {
+    "pageNumber": 159,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 68,
+    "surahEnd": 7,
+    "ayahEnd": 73
+  },
+  {
+    "pageNumber": 160,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 74,
+    "surahEnd": 7,
+    "ayahEnd": 81
+  },
+  {
+    "pageNumber": 161,
+    "juz": 8,
+    "surahStart": 7,
+    "ayahStart": 82,
+    "surahEnd": 7,
+    "ayahEnd": 87
+  },
+  {
+    "pageNumber": 162,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 88,
+    "surahEnd": 7,
+    "ayahEnd": 95
+  },
+  {
+    "pageNumber": 163,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 96,
+    "surahEnd": 7,
+    "ayahEnd": 104
+  },
+  {
+    "pageNumber": 164,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 105,
+    "surahEnd": 7,
+    "ayahEnd": 120
+  },
+  {
+    "pageNumber": 165,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 121,
+    "surahEnd": 7,
+    "ayahEnd": 130
+  },
+  {
+    "pageNumber": 166,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 131,
+    "surahEnd": 7,
+    "ayahEnd": 137
+  },
+  {
+    "pageNumber": 167,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 138,
+    "surahEnd": 7,
+    "ayahEnd": 143
+  },
+  {
+    "pageNumber": 168,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 144,
+    "surahEnd": 7,
+    "ayahEnd": 149
+  },
+  {
+    "pageNumber": 169,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 150,
+    "surahEnd": 7,
+    "ayahEnd": 155
+  },
+  {
+    "pageNumber": 170,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 156,
+    "surahEnd": 7,
+    "ayahEnd": 159
+  },
+  {
+    "pageNumber": 171,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 160,
+    "surahEnd": 7,
+    "ayahEnd": 163
+  },
+  {
+    "pageNumber": 172,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 164,
+    "surahEnd": 7,
+    "ayahEnd": 170
+  },
+  {
+    "pageNumber": 173,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 171,
+    "surahEnd": 7,
+    "ayahEnd": 178
+  },
+  {
+    "pageNumber": 174,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 179,
+    "surahEnd": 7,
+    "ayahEnd": 187
+  },
+  {
+    "pageNumber": 175,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 188,
+    "surahEnd": 7,
+    "ayahEnd": 195
+  },
+  {
+    "pageNumber": 176,
+    "juz": 9,
+    "surahStart": 7,
+    "ayahStart": 196,
+    "surahEnd": 7,
+    "ayahEnd": 206
+  },
+  {
+    "pageNumber": 177,
+    "juz": 9,
+    "surahStart": 8,
+    "ayahStart": 1,
+    "surahEnd": 8,
+    "ayahEnd": 8
+  },
+  {
+    "pageNumber": 178,
+    "juz": 9,
+    "surahStart": 8,
+    "ayahStart": 9,
+    "surahEnd": 8,
+    "ayahEnd": 16
+  },
+  {
+    "pageNumber": 179,
+    "juz": 9,
+    "surahStart": 8,
+    "ayahStart": 17,
+    "surahEnd": 8,
+    "ayahEnd": 25
+  },
+  {
+    "pageNumber": 180,
+    "juz": 9,
+    "surahStart": 8,
+    "ayahStart": 26,
+    "surahEnd": 8,
+    "ayahEnd": 33
+  },
+  {
+    "pageNumber": 181,
+    "juz": 9,
+    "surahStart": 8,
+    "ayahStart": 34,
+    "surahEnd": 8,
+    "ayahEnd": 40
+  },
+  {
+    "pageNumber": 182,
+    "juz": 10,
+    "surahStart": 8,
+    "ayahStart": 41,
+    "surahEnd": 8,
+    "ayahEnd": 45
+  },
+  {
+    "pageNumber": 183,
+    "juz": 10,
+    "surahStart": 8,
+    "ayahStart": 46,
+    "surahEnd": 8,
+    "ayahEnd": 52
+  },
+  {
+    "pageNumber": 184,
+    "juz": 10,
+    "surahStart": 8,
+    "ayahStart": 53,
+    "surahEnd": 8,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 185,
+    "juz": 10,
+    "surahStart": 8,
+    "ayahStart": 62,
+    "surahEnd": 8,
+    "ayahEnd": 69
+  },
+  {
+    "pageNumber": 186,
+    "juz": 10,
+    "surahStart": 8,
+    "ayahStart": 70,
+    "surahEnd": 8,
+    "ayahEnd": 75
+  },
+  {
+    "pageNumber": 187,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 1,
+    "surahEnd": 9,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 188,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 7,
+    "surahEnd": 9,
+    "ayahEnd": 13
+  },
+  {
+    "pageNumber": 189,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 14,
+    "surahEnd": 9,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 190,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 21,
+    "surahEnd": 9,
+    "ayahEnd": 26
+  },
+  {
+    "pageNumber": 191,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 27,
+    "surahEnd": 9,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 192,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 32,
+    "surahEnd": 9,
+    "ayahEnd": 36
+  },
+  {
+    "pageNumber": 193,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 37,
+    "surahEnd": 9,
+    "ayahEnd": 40
+  },
+  {
+    "pageNumber": 194,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 41,
+    "surahEnd": 9,
+    "ayahEnd": 47
+  },
+  {
+    "pageNumber": 195,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 48,
+    "surahEnd": 9,
+    "ayahEnd": 54
+  },
+  {
+    "pageNumber": 196,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 55,
+    "surahEnd": 9,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 197,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 62,
+    "surahEnd": 9,
+    "ayahEnd": 68
+  },
+  {
+    "pageNumber": 198,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 69,
+    "surahEnd": 9,
+    "ayahEnd": 72
+  },
+  {
+    "pageNumber": 199,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 73,
+    "surahEnd": 9,
+    "ayahEnd": 79
+  },
+  {
+    "pageNumber": 200,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 80,
+    "surahEnd": 9,
+    "ayahEnd": 86
+  },
+  {
+    "pageNumber": 201,
+    "juz": 10,
+    "surahStart": 9,
+    "ayahStart": 87,
+    "surahEnd": 9,
+    "ayahEnd": 93
+  },
+  {
+    "pageNumber": 202,
+    "juz": 11,
+    "surahStart": 9,
+    "ayahStart": 94,
+    "surahEnd": 9,
+    "ayahEnd": 99
+  },
+  {
+    "pageNumber": 203,
+    "juz": 11,
+    "surahStart": 9,
+    "ayahStart": 100,
+    "surahEnd": 9,
+    "ayahEnd": 106
+  },
+  {
+    "pageNumber": 204,
+    "juz": 11,
+    "surahStart": 9,
+    "ayahStart": 107,
+    "surahEnd": 9,
+    "ayahEnd": 111
+  },
+  {
+    "pageNumber": 205,
+    "juz": 11,
+    "surahStart": 9,
+    "ayahStart": 112,
+    "surahEnd": 9,
+    "ayahEnd": 117
+  },
+  {
+    "pageNumber": 206,
+    "juz": 11,
+    "surahStart": 9,
+    "ayahStart": 118,
+    "surahEnd": 9,
+    "ayahEnd": 122
+  },
+  {
+    "pageNumber": 207,
+    "juz": 11,
+    "surahStart": 9,
+    "ayahStart": 123,
+    "surahEnd": 9,
+    "ayahEnd": 129
+  },
+  {
+    "pageNumber": 208,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 1,
+    "surahEnd": 10,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 209,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 7,
+    "surahEnd": 10,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 210,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 15,
+    "surahEnd": 10,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 211,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 21,
+    "surahEnd": 10,
+    "ayahEnd": 25
+  },
+  {
+    "pageNumber": 212,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 26,
+    "surahEnd": 10,
+    "ayahEnd": 33
+  },
+  {
+    "pageNumber": 213,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 34,
+    "surahEnd": 10,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 214,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 43,
+    "surahEnd": 10,
+    "ayahEnd": 53
+  },
+  {
+    "pageNumber": 215,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 54,
+    "surahEnd": 10,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 216,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 62,
+    "surahEnd": 10,
+    "ayahEnd": 70
+  },
+  {
+    "pageNumber": 217,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 71,
+    "surahEnd": 10,
+    "ayahEnd": 78
+  },
+  {
+    "pageNumber": 218,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 79,
+    "surahEnd": 10,
+    "ayahEnd": 88
+  },
+  {
+    "pageNumber": 219,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 89,
+    "surahEnd": 10,
+    "ayahEnd": 97
+  },
+  {
+    "pageNumber": 220,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 98,
+    "surahEnd": 10,
+    "ayahEnd": 106
+  },
+  {
+    "pageNumber": 221,
+    "juz": 11,
+    "surahStart": 10,
+    "ayahStart": 107,
+    "surahEnd": 11,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 222,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 6,
+    "surahEnd": 11,
+    "ayahEnd": 12
+  },
+  {
+    "pageNumber": 223,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 13,
+    "surahEnd": 11,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 224,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 20,
+    "surahEnd": 11,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 225,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 29,
+    "surahEnd": 11,
+    "ayahEnd": 37
+  },
+  {
+    "pageNumber": 226,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 38,
+    "surahEnd": 11,
+    "ayahEnd": 45
+  },
+  {
+    "pageNumber": 227,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 46,
+    "surahEnd": 11,
+    "ayahEnd": 53
+  },
+  {
+    "pageNumber": 228,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 54,
+    "surahEnd": 11,
+    "ayahEnd": 62
+  },
+  {
+    "pageNumber": 229,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 63,
+    "surahEnd": 11,
+    "ayahEnd": 71
+  },
+  {
+    "pageNumber": 230,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 72,
+    "surahEnd": 11,
+    "ayahEnd": 81
+  },
+  {
+    "pageNumber": 231,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 82,
+    "surahEnd": 11,
+    "ayahEnd": 88
+  },
+  {
+    "pageNumber": 232,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 89,
+    "surahEnd": 11,
+    "ayahEnd": 97
+  },
+  {
+    "pageNumber": 233,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 98,
+    "surahEnd": 11,
+    "ayahEnd": 108
+  },
+  {
+    "pageNumber": 234,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 109,
+    "surahEnd": 11,
+    "ayahEnd": 117
+  },
+  {
+    "pageNumber": 235,
+    "juz": 12,
+    "surahStart": 11,
+    "ayahStart": 118,
+    "surahEnd": 12,
+    "ayahEnd": 4
+  },
+  {
+    "pageNumber": 236,
+    "juz": 12,
+    "surahStart": 12,
+    "ayahStart": 5,
+    "surahEnd": 12,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 237,
+    "juz": 12,
+    "surahStart": 12,
+    "ayahStart": 15,
+    "surahEnd": 12,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 238,
+    "juz": 12,
+    "surahStart": 12,
+    "ayahStart": 23,
+    "surahEnd": 12,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 239,
+    "juz": 12,
+    "surahStart": 12,
+    "ayahStart": 31,
+    "surahEnd": 12,
+    "ayahEnd": 37
+  },
+  {
+    "pageNumber": 240,
+    "juz": 12,
+    "surahStart": 12,
+    "ayahStart": 38,
+    "surahEnd": 12,
+    "ayahEnd": 43
+  },
+  {
+    "pageNumber": 241,
+    "juz": 12,
+    "surahStart": 12,
+    "ayahStart": 44,
+    "surahEnd": 12,
+    "ayahEnd": 52
+  },
+  {
+    "pageNumber": 242,
+    "juz": 13,
+    "surahStart": 12,
+    "ayahStart": 53,
+    "surahEnd": 12,
+    "ayahEnd": 63
+  },
+  {
+    "pageNumber": 243,
+    "juz": 13,
+    "surahStart": 12,
+    "ayahStart": 64,
+    "surahEnd": 12,
+    "ayahEnd": 69
+  },
+  {
+    "pageNumber": 244,
+    "juz": 13,
+    "surahStart": 12,
+    "ayahStart": 70,
+    "surahEnd": 12,
+    "ayahEnd": 78
+  },
+  {
+    "pageNumber": 245,
+    "juz": 13,
+    "surahStart": 12,
+    "ayahStart": 79,
+    "surahEnd": 12,
+    "ayahEnd": 86
+  },
+  {
+    "pageNumber": 246,
+    "juz": 13,
+    "surahStart": 12,
+    "ayahStart": 87,
+    "surahEnd": 12,
+    "ayahEnd": 95
+  },
+  {
+    "pageNumber": 247,
+    "juz": 13,
+    "surahStart": 12,
+    "ayahStart": 96,
+    "surahEnd": 12,
+    "ayahEnd": 103
+  },
+  {
+    "pageNumber": 248,
+    "juz": 13,
+    "surahStart": 12,
+    "ayahStart": 104,
+    "surahEnd": 12,
+    "ayahEnd": 111
+  },
+  {
+    "pageNumber": 249,
+    "juz": 13,
+    "surahStart": 13,
+    "ayahStart": 1,
+    "surahEnd": 13,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 250,
+    "juz": 13,
+    "surahStart": 13,
+    "ayahStart": 6,
+    "surahEnd": 13,
+    "ayahEnd": 13
+  },
+  {
+    "pageNumber": 251,
+    "juz": 13,
+    "surahStart": 13,
+    "ayahStart": 14,
+    "surahEnd": 13,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 252,
+    "juz": 13,
+    "surahStart": 13,
+    "ayahStart": 19,
+    "surahEnd": 13,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 253,
+    "juz": 13,
+    "surahStart": 13,
+    "ayahStart": 29,
+    "surahEnd": 13,
+    "ayahEnd": 34
+  },
+  {
+    "pageNumber": 254,
+    "juz": 13,
+    "surahStart": 13,
+    "ayahStart": 35,
+    "surahEnd": 13,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 255,
+    "juz": 13,
+    "surahStart": 13,
+    "ayahStart": 43,
+    "surahEnd": 14,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 256,
+    "juz": 13,
+    "surahStart": 14,
+    "ayahStart": 6,
+    "surahEnd": 14,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 257,
+    "juz": 13,
+    "surahStart": 14,
+    "ayahStart": 11,
+    "surahEnd": 14,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 258,
+    "juz": 13,
+    "surahStart": 14,
+    "ayahStart": 19,
+    "surahEnd": 14,
+    "ayahEnd": 24
+  },
+  {
+    "pageNumber": 259,
+    "juz": 13,
+    "surahStart": 14,
+    "ayahStart": 25,
+    "surahEnd": 14,
+    "ayahEnd": 33
+  },
+  {
+    "pageNumber": 260,
+    "juz": 13,
+    "surahStart": 14,
+    "ayahStart": 34,
+    "surahEnd": 14,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 261,
+    "juz": 13,
+    "surahStart": 14,
+    "ayahStart": 43,
+    "surahEnd": 14,
+    "ayahEnd": 52
+  },
+  {
+    "pageNumber": 262,
+    "juz": 14,
+    "surahStart": 15,
+    "ayahStart": 1,
+    "surahEnd": 15,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 263,
+    "juz": 14,
+    "surahStart": 15,
+    "ayahStart": 16,
+    "surahEnd": 15,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 264,
+    "juz": 14,
+    "surahStart": 15,
+    "ayahStart": 32,
+    "surahEnd": 15,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 265,
+    "juz": 14,
+    "surahStart": 15,
+    "ayahStart": 52,
+    "surahEnd": 15,
+    "ayahEnd": 70
+  },
+  {
+    "pageNumber": 266,
+    "juz": 14,
+    "surahStart": 15,
+    "ayahStart": 71,
+    "surahEnd": 15,
+    "ayahEnd": 90
+  },
+  {
+    "pageNumber": 267,
+    "juz": 14,
+    "surahStart": 15,
+    "ayahStart": 91,
+    "surahEnd": 16,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 268,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 7,
+    "surahEnd": 16,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 269,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 15,
+    "surahEnd": 16,
+    "ayahEnd": 26
+  },
+  {
+    "pageNumber": 270,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 27,
+    "surahEnd": 16,
+    "ayahEnd": 34
+  },
+  {
+    "pageNumber": 271,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 35,
+    "surahEnd": 16,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 272,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 43,
+    "surahEnd": 16,
+    "ayahEnd": 54
+  },
+  {
+    "pageNumber": 273,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 55,
+    "surahEnd": 16,
+    "ayahEnd": 64
+  },
+  {
+    "pageNumber": 274,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 65,
+    "surahEnd": 16,
+    "ayahEnd": 72
+  },
+  {
+    "pageNumber": 275,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 73,
+    "surahEnd": 16,
+    "ayahEnd": 79
+  },
+  {
+    "pageNumber": 276,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 80,
+    "surahEnd": 16,
+    "ayahEnd": 87
+  },
+  {
+    "pageNumber": 277,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 88,
+    "surahEnd": 16,
+    "ayahEnd": 93
+  },
+  {
+    "pageNumber": 278,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 94,
+    "surahEnd": 16,
+    "ayahEnd": 102
+  },
+  {
+    "pageNumber": 279,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 103,
+    "surahEnd": 16,
+    "ayahEnd": 110
+  },
+  {
+    "pageNumber": 280,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 111,
+    "surahEnd": 16,
+    "ayahEnd": 118
+  },
+  {
+    "pageNumber": 281,
+    "juz": 14,
+    "surahStart": 16,
+    "ayahStart": 119,
+    "surahEnd": 16,
+    "ayahEnd": 128
+  },
+  {
+    "pageNumber": 282,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 1,
+    "surahEnd": 17,
+    "ayahEnd": 7
+  },
+  {
+    "pageNumber": 283,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 8,
+    "surahEnd": 17,
+    "ayahEnd": 17
+  },
+  {
+    "pageNumber": 284,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 18,
+    "surahEnd": 17,
+    "ayahEnd": 27
+  },
+  {
+    "pageNumber": 285,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 28,
+    "surahEnd": 17,
+    "ayahEnd": 38
+  },
+  {
+    "pageNumber": 286,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 39,
+    "surahEnd": 17,
+    "ayahEnd": 49
+  },
+  {
+    "pageNumber": 287,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 50,
+    "surahEnd": 17,
+    "ayahEnd": 58
+  },
+  {
+    "pageNumber": 288,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 59,
+    "surahEnd": 17,
+    "ayahEnd": 66
+  },
+  {
+    "pageNumber": 289,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 67,
+    "surahEnd": 17,
+    "ayahEnd": 75
+  },
+  {
+    "pageNumber": 290,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 76,
+    "surahEnd": 17,
+    "ayahEnd": 86
+  },
+  {
+    "pageNumber": 291,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 87,
+    "surahEnd": 17,
+    "ayahEnd": 96
+  },
+  {
+    "pageNumber": 292,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 97,
+    "surahEnd": 17,
+    "ayahEnd": 104
+  },
+  {
+    "pageNumber": 293,
+    "juz": 15,
+    "surahStart": 17,
+    "ayahStart": 105,
+    "surahEnd": 18,
+    "ayahEnd": 4
+  },
+  {
+    "pageNumber": 294,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 5,
+    "surahEnd": 18,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 295,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 16,
+    "surahEnd": 18,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 296,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 21,
+    "surahEnd": 18,
+    "ayahEnd": 27
+  },
+  {
+    "pageNumber": 297,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 28,
+    "surahEnd": 18,
+    "ayahEnd": 34
+  },
+  {
+    "pageNumber": 298,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 35,
+    "surahEnd": 18,
+    "ayahEnd": 45
+  },
+  {
+    "pageNumber": 299,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 46,
+    "surahEnd": 18,
+    "ayahEnd": 53
+  },
+  {
+    "pageNumber": 300,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 54,
+    "surahEnd": 18,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 301,
+    "juz": 15,
+    "surahStart": 18,
+    "ayahStart": 62,
+    "surahEnd": 18,
+    "ayahEnd": 74
+  },
+  {
+    "pageNumber": 302,
+    "juz": 16,
+    "surahStart": 18,
+    "ayahStart": 75,
+    "surahEnd": 18,
+    "ayahEnd": 83
+  },
+  {
+    "pageNumber": 303,
+    "juz": 16,
+    "surahStart": 18,
+    "ayahStart": 84,
+    "surahEnd": 18,
+    "ayahEnd": 97
+  },
+  {
+    "pageNumber": 304,
+    "juz": 16,
+    "surahStart": 18,
+    "ayahStart": 98,
+    "surahEnd": 18,
+    "ayahEnd": 110
+  },
+  {
+    "pageNumber": 305,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 1,
+    "surahEnd": 19,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 306,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 12,
+    "surahEnd": 19,
+    "ayahEnd": 25
+  },
+  {
+    "pageNumber": 307,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 26,
+    "surahEnd": 19,
+    "ayahEnd": 38
+  },
+  {
+    "pageNumber": 308,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 39,
+    "surahEnd": 19,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 309,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 52,
+    "surahEnd": 19,
+    "ayahEnd": 64
+  },
+  {
+    "pageNumber": 310,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 65,
+    "surahEnd": 19,
+    "ayahEnd": 76
+  },
+  {
+    "pageNumber": 311,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 77,
+    "surahEnd": 19,
+    "ayahEnd": 95
+  },
+  {
+    "pageNumber": 312,
+    "juz": 16,
+    "surahStart": 19,
+    "ayahStart": 96,
+    "surahEnd": 20,
+    "ayahEnd": 12
+  },
+  {
+    "pageNumber": 313,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 13,
+    "surahEnd": 20,
+    "ayahEnd": 37
+  },
+  {
+    "pageNumber": 314,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 38,
+    "surahEnd": 20,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 315,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 52,
+    "surahEnd": 20,
+    "ayahEnd": 64
+  },
+  {
+    "pageNumber": 316,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 65,
+    "surahEnd": 20,
+    "ayahEnd": 76
+  },
+  {
+    "pageNumber": 317,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 77,
+    "surahEnd": 20,
+    "ayahEnd": 87
+  },
+  {
+    "pageNumber": 318,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 88,
+    "surahEnd": 20,
+    "ayahEnd": 98
+  },
+  {
+    "pageNumber": 319,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 99,
+    "surahEnd": 20,
+    "ayahEnd": 113
+  },
+  {
+    "pageNumber": 320,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 114,
+    "surahEnd": 20,
+    "ayahEnd": 125
+  },
+  {
+    "pageNumber": 321,
+    "juz": 16,
+    "surahStart": 20,
+    "ayahStart": 126,
+    "surahEnd": 20,
+    "ayahEnd": 135
+  },
+  {
+    "pageNumber": 322,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 1,
+    "surahEnd": 21,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 323,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 11,
+    "surahEnd": 21,
+    "ayahEnd": 24
+  },
+  {
+    "pageNumber": 324,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 25,
+    "surahEnd": 21,
+    "ayahEnd": 35
+  },
+  {
+    "pageNumber": 325,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 36,
+    "surahEnd": 21,
+    "ayahEnd": 44
+  },
+  {
+    "pageNumber": 326,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 45,
+    "surahEnd": 21,
+    "ayahEnd": 57
+  },
+  {
+    "pageNumber": 327,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 58,
+    "surahEnd": 21,
+    "ayahEnd": 72
+  },
+  {
+    "pageNumber": 328,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 73,
+    "surahEnd": 21,
+    "ayahEnd": 81
+  },
+  {
+    "pageNumber": 329,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 82,
+    "surahEnd": 21,
+    "ayahEnd": 90
+  },
+  {
+    "pageNumber": 330,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 91,
+    "surahEnd": 21,
+    "ayahEnd": 101
+  },
+  {
+    "pageNumber": 331,
+    "juz": 17,
+    "surahStart": 21,
+    "ayahStart": 102,
+    "surahEnd": 21,
+    "ayahEnd": 112
+  },
+  {
+    "pageNumber": 332,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 1,
+    "surahEnd": 22,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 333,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 6,
+    "surahEnd": 22,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 334,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 16,
+    "surahEnd": 22,
+    "ayahEnd": 23
+  },
+  {
+    "pageNumber": 335,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 24,
+    "surahEnd": 22,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 336,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 31,
+    "surahEnd": 22,
+    "ayahEnd": 38
+  },
+  {
+    "pageNumber": 337,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 39,
+    "surahEnd": 22,
+    "ayahEnd": 46
+  },
+  {
+    "pageNumber": 338,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 47,
+    "surahEnd": 22,
+    "ayahEnd": 55
+  },
+  {
+    "pageNumber": 339,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 56,
+    "surahEnd": 22,
+    "ayahEnd": 64
+  },
+  {
+    "pageNumber": 340,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 65,
+    "surahEnd": 22,
+    "ayahEnd": 72
+  },
+  {
+    "pageNumber": 341,
+    "juz": 17,
+    "surahStart": 22,
+    "ayahStart": 73,
+    "surahEnd": 22,
+    "ayahEnd": 78
+  },
+  {
+    "pageNumber": 342,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 1,
+    "surahEnd": 23,
+    "ayahEnd": 17
+  },
+  {
+    "pageNumber": 343,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 18,
+    "surahEnd": 23,
+    "ayahEnd": 27
+  },
+  {
+    "pageNumber": 344,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 28,
+    "surahEnd": 23,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 345,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 43,
+    "surahEnd": 23,
+    "ayahEnd": 59
+  },
+  {
+    "pageNumber": 346,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 60,
+    "surahEnd": 23,
+    "ayahEnd": 74
+  },
+  {
+    "pageNumber": 347,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 75,
+    "surahEnd": 23,
+    "ayahEnd": 89
+  },
+  {
+    "pageNumber": 348,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 90,
+    "surahEnd": 23,
+    "ayahEnd": 104
+  },
+  {
+    "pageNumber": 349,
+    "juz": 18,
+    "surahStart": 23,
+    "ayahStart": 105,
+    "surahEnd": 23,
+    "ayahEnd": 118
+  },
+  {
+    "pageNumber": 350,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 1,
+    "surahEnd": 24,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 351,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 11,
+    "surahEnd": 24,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 352,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 21,
+    "surahEnd": 24,
+    "ayahEnd": 27
+  },
+  {
+    "pageNumber": 353,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 28,
+    "surahEnd": 24,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 354,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 32,
+    "surahEnd": 24,
+    "ayahEnd": 36
+  },
+  {
+    "pageNumber": 355,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 37,
+    "surahEnd": 24,
+    "ayahEnd": 43
+  },
+  {
+    "pageNumber": 356,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 44,
+    "surahEnd": 24,
+    "ayahEnd": 53
+  },
+  {
+    "pageNumber": 357,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 54,
+    "surahEnd": 24,
+    "ayahEnd": 58
+  },
+  {
+    "pageNumber": 358,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 59,
+    "surahEnd": 24,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 359,
+    "juz": 18,
+    "surahStart": 24,
+    "ayahStart": 62,
+    "surahEnd": 25,
+    "ayahEnd": 2
+  },
+  {
+    "pageNumber": 360,
+    "juz": 18,
+    "surahStart": 25,
+    "ayahStart": 3,
+    "surahEnd": 25,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 361,
+    "juz": 18,
+    "surahStart": 25,
+    "ayahStart": 12,
+    "surahEnd": 25,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 362,
+    "juz": 19,
+    "surahStart": 25,
+    "ayahStart": 21,
+    "surahEnd": 25,
+    "ayahEnd": 32
+  },
+  {
+    "pageNumber": 363,
+    "juz": 19,
+    "surahStart": 25,
+    "ayahStart": 33,
+    "surahEnd": 25,
+    "ayahEnd": 43
+  },
+  {
+    "pageNumber": 364,
+    "juz": 19,
+    "surahStart": 25,
+    "ayahStart": 44,
+    "surahEnd": 25,
+    "ayahEnd": 55
+  },
+  {
+    "pageNumber": 365,
+    "juz": 19,
+    "surahStart": 25,
+    "ayahStart": 56,
+    "surahEnd": 25,
+    "ayahEnd": 67
+  },
+  {
+    "pageNumber": 366,
+    "juz": 19,
+    "surahStart": 25,
+    "ayahStart": 68,
+    "surahEnd": 25,
+    "ayahEnd": 77
+  },
+  {
+    "pageNumber": 367,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 1,
+    "surahEnd": 26,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 368,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 20,
+    "surahEnd": 26,
+    "ayahEnd": 39
+  },
+  {
+    "pageNumber": 369,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 40,
+    "surahEnd": 26,
+    "ayahEnd": 60
+  },
+  {
+    "pageNumber": 370,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 61,
+    "surahEnd": 26,
+    "ayahEnd": 83
+  },
+  {
+    "pageNumber": 371,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 84,
+    "surahEnd": 26,
+    "ayahEnd": 111
+  },
+  {
+    "pageNumber": 372,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 112,
+    "surahEnd": 26,
+    "ayahEnd": 136
+  },
+  {
+    "pageNumber": 373,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 137,
+    "surahEnd": 26,
+    "ayahEnd": 159
+  },
+  {
+    "pageNumber": 374,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 160,
+    "surahEnd": 26,
+    "ayahEnd": 183
+  },
+  {
+    "pageNumber": 375,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 184,
+    "surahEnd": 26,
+    "ayahEnd": 206
+  },
+  {
+    "pageNumber": 376,
+    "juz": 19,
+    "surahStart": 26,
+    "ayahStart": 207,
+    "surahEnd": 26,
+    "ayahEnd": 227
+  },
+  {
+    "pageNumber": 377,
+    "juz": 19,
+    "surahStart": 27,
+    "ayahStart": 1,
+    "surahEnd": 27,
+    "ayahEnd": 13
+  },
+  {
+    "pageNumber": 378,
+    "juz": 19,
+    "surahStart": 27,
+    "ayahStart": 14,
+    "surahEnd": 27,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 379,
+    "juz": 19,
+    "surahStart": 27,
+    "ayahStart": 23,
+    "surahEnd": 27,
+    "ayahEnd": 35
+  },
+  {
+    "pageNumber": 380,
+    "juz": 19,
+    "surahStart": 27,
+    "ayahStart": 36,
+    "surahEnd": 27,
+    "ayahEnd": 44
+  },
+  {
+    "pageNumber": 381,
+    "juz": 19,
+    "surahStart": 27,
+    "ayahStart": 45,
+    "surahEnd": 27,
+    "ayahEnd": 55
+  },
+  {
+    "pageNumber": 382,
+    "juz": 20,
+    "surahStart": 27,
+    "ayahStart": 56,
+    "surahEnd": 27,
+    "ayahEnd": 63
+  },
+  {
+    "pageNumber": 383,
+    "juz": 20,
+    "surahStart": 27,
+    "ayahStart": 64,
+    "surahEnd": 27,
+    "ayahEnd": 76
+  },
+  {
+    "pageNumber": 384,
+    "juz": 20,
+    "surahStart": 27,
+    "ayahStart": 77,
+    "surahEnd": 27,
+    "ayahEnd": 88
+  },
+  {
+    "pageNumber": 385,
+    "juz": 20,
+    "surahStart": 27,
+    "ayahStart": 89,
+    "surahEnd": 28,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 386,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 6,
+    "surahEnd": 28,
+    "ayahEnd": 13
+  },
+  {
+    "pageNumber": 387,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 14,
+    "surahEnd": 28,
+    "ayahEnd": 21
+  },
+  {
+    "pageNumber": 388,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 22,
+    "surahEnd": 28,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 389,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 29,
+    "surahEnd": 28,
+    "ayahEnd": 35
+  },
+  {
+    "pageNumber": 390,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 36,
+    "surahEnd": 28,
+    "ayahEnd": 43
+  },
+  {
+    "pageNumber": 391,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 44,
+    "surahEnd": 28,
+    "ayahEnd": 50
+  },
+  {
+    "pageNumber": 392,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 51,
+    "surahEnd": 28,
+    "ayahEnd": 59
+  },
+  {
+    "pageNumber": 393,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 60,
+    "surahEnd": 28,
+    "ayahEnd": 70
+  },
+  {
+    "pageNumber": 394,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 71,
+    "surahEnd": 28,
+    "ayahEnd": 77
+  },
+  {
+    "pageNumber": 395,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 78,
+    "surahEnd": 28,
+    "ayahEnd": 84
+  },
+  {
+    "pageNumber": 396,
+    "juz": 20,
+    "surahStart": 28,
+    "ayahStart": 85,
+    "surahEnd": 29,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 397,
+    "juz": 20,
+    "surahStart": 29,
+    "ayahStart": 7,
+    "surahEnd": 29,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 398,
+    "juz": 20,
+    "surahStart": 29,
+    "ayahStart": 15,
+    "surahEnd": 29,
+    "ayahEnd": 23
+  },
+  {
+    "pageNumber": 399,
+    "juz": 20,
+    "surahStart": 29,
+    "ayahStart": 24,
+    "surahEnd": 29,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 400,
+    "juz": 20,
+    "surahStart": 29,
+    "ayahStart": 31,
+    "surahEnd": 29,
+    "ayahEnd": 38
+  },
+  {
+    "pageNumber": 401,
+    "juz": 20,
+    "surahStart": 29,
+    "ayahStart": 39,
+    "surahEnd": 29,
+    "ayahEnd": 45
+  },
+  {
+    "pageNumber": 402,
+    "juz": 21,
+    "surahStart": 29,
+    "ayahStart": 46,
+    "surahEnd": 29,
+    "ayahEnd": 52
+  },
+  {
+    "pageNumber": 403,
+    "juz": 21,
+    "surahStart": 29,
+    "ayahStart": 53,
+    "surahEnd": 29,
+    "ayahEnd": 63
+  },
+  {
+    "pageNumber": 404,
+    "juz": 21,
+    "surahStart": 29,
+    "ayahStart": 64,
+    "surahEnd": 30,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 405,
+    "juz": 21,
+    "surahStart": 30,
+    "ayahStart": 6,
+    "surahEnd": 30,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 406,
+    "juz": 21,
+    "surahStart": 30,
+    "ayahStart": 16,
+    "surahEnd": 30,
+    "ayahEnd": 24
+  },
+  {
+    "pageNumber": 407,
+    "juz": 21,
+    "surahStart": 30,
+    "ayahStart": 25,
+    "surahEnd": 30,
+    "ayahEnd": 32
+  },
+  {
+    "pageNumber": 408,
+    "juz": 21,
+    "surahStart": 30,
+    "ayahStart": 33,
+    "surahEnd": 30,
+    "ayahEnd": 41
+  },
+  {
+    "pageNumber": 409,
+    "juz": 21,
+    "surahStart": 30,
+    "ayahStart": 42,
+    "surahEnd": 30,
+    "ayahEnd": 50
+  },
+  {
+    "pageNumber": 410,
+    "juz": 21,
+    "surahStart": 30,
+    "ayahStart": 51,
+    "surahEnd": 30,
+    "ayahEnd": 60
+  },
+  {
+    "pageNumber": 411,
+    "juz": 21,
+    "surahStart": 31,
+    "ayahStart": 1,
+    "surahEnd": 31,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 412,
+    "juz": 21,
+    "surahStart": 31,
+    "ayahStart": 12,
+    "surahEnd": 31,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 413,
+    "juz": 21,
+    "surahStart": 31,
+    "ayahStart": 20,
+    "surahEnd": 31,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 414,
+    "juz": 21,
+    "surahStart": 31,
+    "ayahStart": 29,
+    "surahEnd": 31,
+    "ayahEnd": 34
+  },
+  {
+    "pageNumber": 415,
+    "juz": 21,
+    "surahStart": 32,
+    "ayahStart": 1,
+    "surahEnd": 32,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 416,
+    "juz": 21,
+    "surahStart": 32,
+    "ayahStart": 12,
+    "surahEnd": 32,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 417,
+    "juz": 21,
+    "surahStart": 32,
+    "ayahStart": 21,
+    "surahEnd": 32,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 418,
+    "juz": 21,
+    "surahStart": 33,
+    "ayahStart": 1,
+    "surahEnd": 33,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 419,
+    "juz": 21,
+    "surahStart": 33,
+    "ayahStart": 7,
+    "surahEnd": 33,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 420,
+    "juz": 21,
+    "surahStart": 33,
+    "ayahStart": 16,
+    "surahEnd": 33,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 421,
+    "juz": 21,
+    "surahStart": 33,
+    "ayahStart": 23,
+    "surahEnd": 33,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 422,
+    "juz": 22,
+    "surahStart": 33,
+    "ayahStart": 31,
+    "surahEnd": 33,
+    "ayahEnd": 35
+  },
+  {
+    "pageNumber": 423,
+    "juz": 22,
+    "surahStart": 33,
+    "ayahStart": 36,
+    "surahEnd": 33,
+    "ayahEnd": 43
+  },
+  {
+    "pageNumber": 424,
+    "juz": 22,
+    "surahStart": 33,
+    "ayahStart": 44,
+    "surahEnd": 33,
+    "ayahEnd": 50
+  },
+  {
+    "pageNumber": 425,
+    "juz": 22,
+    "surahStart": 33,
+    "ayahStart": 51,
+    "surahEnd": 33,
+    "ayahEnd": 54
+  },
+  {
+    "pageNumber": 426,
+    "juz": 22,
+    "surahStart": 33,
+    "ayahStart": 55,
+    "surahEnd": 33,
+    "ayahEnd": 62
+  },
+  {
+    "pageNumber": 427,
+    "juz": 22,
+    "surahStart": 33,
+    "ayahStart": 63,
+    "surahEnd": 33,
+    "ayahEnd": 73
+  },
+  {
+    "pageNumber": 428,
+    "juz": 22,
+    "surahStart": 34,
+    "ayahStart": 1,
+    "surahEnd": 34,
+    "ayahEnd": 7
+  },
+  {
+    "pageNumber": 429,
+    "juz": 22,
+    "surahStart": 34,
+    "ayahStart": 8,
+    "surahEnd": 34,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 430,
+    "juz": 22,
+    "surahStart": 34,
+    "ayahStart": 15,
+    "surahEnd": 34,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 431,
+    "juz": 22,
+    "surahStart": 34,
+    "ayahStart": 23,
+    "surahEnd": 34,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 432,
+    "juz": 22,
+    "surahStart": 34,
+    "ayahStart": 32,
+    "surahEnd": 34,
+    "ayahEnd": 39
+  },
+  {
+    "pageNumber": 433,
+    "juz": 22,
+    "surahStart": 34,
+    "ayahStart": 40,
+    "surahEnd": 34,
+    "ayahEnd": 48
+  },
+  {
+    "pageNumber": 434,
+    "juz": 22,
+    "surahStart": 34,
+    "ayahStart": 49,
+    "surahEnd": 35,
+    "ayahEnd": 3
+  },
+  {
+    "pageNumber": 435,
+    "juz": 22,
+    "surahStart": 35,
+    "ayahStart": 4,
+    "surahEnd": 35,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 436,
+    "juz": 22,
+    "surahStart": 35,
+    "ayahStart": 12,
+    "surahEnd": 35,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 437,
+    "juz": 22,
+    "surahStart": 35,
+    "ayahStart": 19,
+    "surahEnd": 35,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 438,
+    "juz": 22,
+    "surahStart": 35,
+    "ayahStart": 31,
+    "surahEnd": 35,
+    "ayahEnd": 38
+  },
+  {
+    "pageNumber": 439,
+    "juz": 22,
+    "surahStart": 35,
+    "ayahStart": 39,
+    "surahEnd": 35,
+    "ayahEnd": 44
+  },
+  {
+    "pageNumber": 440,
+    "juz": 22,
+    "surahStart": 35,
+    "ayahStart": 45,
+    "surahEnd": 36,
+    "ayahEnd": 12
+  },
+  {
+    "pageNumber": 441,
+    "juz": 22,
+    "surahStart": 36,
+    "ayahStart": 13,
+    "surahEnd": 36,
+    "ayahEnd": 27
+  },
+  {
+    "pageNumber": 442,
+    "juz": 23,
+    "surahStart": 36,
+    "ayahStart": 28,
+    "surahEnd": 36,
+    "ayahEnd": 40
+  },
+  {
+    "pageNumber": 443,
+    "juz": 23,
+    "surahStart": 36,
+    "ayahStart": 41,
+    "surahEnd": 36,
+    "ayahEnd": 54
+  },
+  {
+    "pageNumber": 444,
+    "juz": 23,
+    "surahStart": 36,
+    "ayahStart": 55,
+    "surahEnd": 36,
+    "ayahEnd": 70
+  },
+  {
+    "pageNumber": 445,
+    "juz": 23,
+    "surahStart": 36,
+    "ayahStart": 71,
+    "surahEnd": 36,
+    "ayahEnd": 83
+  },
+  {
+    "pageNumber": 446,
+    "juz": 23,
+    "surahStart": 37,
+    "ayahStart": 1,
+    "surahEnd": 37,
+    "ayahEnd": 24
+  },
+  {
+    "pageNumber": 447,
+    "juz": 23,
+    "surahStart": 37,
+    "ayahStart": 25,
+    "surahEnd": 37,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 448,
+    "juz": 23,
+    "surahStart": 37,
+    "ayahStart": 52,
+    "surahEnd": 37,
+    "ayahEnd": 76
+  },
+  {
+    "pageNumber": 449,
+    "juz": 23,
+    "surahStart": 37,
+    "ayahStart": 77,
+    "surahEnd": 37,
+    "ayahEnd": 102
+  },
+  {
+    "pageNumber": 450,
+    "juz": 23,
+    "surahStart": 37,
+    "ayahStart": 103,
+    "surahEnd": 37,
+    "ayahEnd": 126
+  },
+  {
+    "pageNumber": 451,
+    "juz": 23,
+    "surahStart": 37,
+    "ayahStart": 127,
+    "surahEnd": 37,
+    "ayahEnd": 153
+  },
+  {
+    "pageNumber": 452,
+    "juz": 23,
+    "surahStart": 37,
+    "ayahStart": 154,
+    "surahEnd": 37,
+    "ayahEnd": 182
+  },
+  {
+    "pageNumber": 453,
+    "juz": 23,
+    "surahStart": 38,
+    "ayahStart": 1,
+    "surahEnd": 38,
+    "ayahEnd": 16
+  },
+  {
+    "pageNumber": 454,
+    "juz": 23,
+    "surahStart": 38,
+    "ayahStart": 17,
+    "surahEnd": 38,
+    "ayahEnd": 26
+  },
+  {
+    "pageNumber": 455,
+    "juz": 23,
+    "surahStart": 38,
+    "ayahStart": 27,
+    "surahEnd": 38,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 456,
+    "juz": 23,
+    "surahStart": 38,
+    "ayahStart": 43,
+    "surahEnd": 38,
+    "ayahEnd": 61
+  },
+  {
+    "pageNumber": 457,
+    "juz": 23,
+    "surahStart": 38,
+    "ayahStart": 62,
+    "surahEnd": 38,
+    "ayahEnd": 83
+  },
+  {
+    "pageNumber": 458,
+    "juz": 23,
+    "surahStart": 38,
+    "ayahStart": 84,
+    "surahEnd": 39,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 459,
+    "juz": 23,
+    "surahStart": 39,
+    "ayahStart": 6,
+    "surahEnd": 39,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 460,
+    "juz": 23,
+    "surahStart": 39,
+    "ayahStart": 11,
+    "surahEnd": 39,
+    "ayahEnd": 21
+  },
+  {
+    "pageNumber": 461,
+    "juz": 23,
+    "surahStart": 39,
+    "ayahStart": 22,
+    "surahEnd": 39,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 462,
+    "juz": 24,
+    "surahStart": 39,
+    "ayahStart": 32,
+    "surahEnd": 39,
+    "ayahEnd": 40
+  },
+  {
+    "pageNumber": 463,
+    "juz": 24,
+    "surahStart": 39,
+    "ayahStart": 41,
+    "surahEnd": 39,
+    "ayahEnd": 47
+  },
+  {
+    "pageNumber": 464,
+    "juz": 24,
+    "surahStart": 39,
+    "ayahStart": 48,
+    "surahEnd": 39,
+    "ayahEnd": 56
+  },
+  {
+    "pageNumber": 465,
+    "juz": 24,
+    "surahStart": 39,
+    "ayahStart": 57,
+    "surahEnd": 39,
+    "ayahEnd": 67
+  },
+  {
+    "pageNumber": 466,
+    "juz": 24,
+    "surahStart": 39,
+    "ayahStart": 68,
+    "surahEnd": 39,
+    "ayahEnd": 74
+  },
+  {
+    "pageNumber": 467,
+    "juz": 24,
+    "surahStart": 39,
+    "ayahStart": 75,
+    "surahEnd": 40,
+    "ayahEnd": 7
+  },
+  {
+    "pageNumber": 468,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 8,
+    "surahEnd": 40,
+    "ayahEnd": 16
+  },
+  {
+    "pageNumber": 469,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 17,
+    "surahEnd": 40,
+    "ayahEnd": 25
+  },
+  {
+    "pageNumber": 470,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 26,
+    "surahEnd": 40,
+    "ayahEnd": 33
+  },
+  {
+    "pageNumber": 471,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 34,
+    "surahEnd": 40,
+    "ayahEnd": 40
+  },
+  {
+    "pageNumber": 472,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 41,
+    "surahEnd": 40,
+    "ayahEnd": 49
+  },
+  {
+    "pageNumber": 473,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 50,
+    "surahEnd": 40,
+    "ayahEnd": 58
+  },
+  {
+    "pageNumber": 474,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 59,
+    "surahEnd": 40,
+    "ayahEnd": 66
+  },
+  {
+    "pageNumber": 475,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 67,
+    "surahEnd": 40,
+    "ayahEnd": 77
+  },
+  {
+    "pageNumber": 476,
+    "juz": 24,
+    "surahStart": 40,
+    "ayahStart": 78,
+    "surahEnd": 40,
+    "ayahEnd": 85
+  },
+  {
+    "pageNumber": 477,
+    "juz": 24,
+    "surahStart": 41,
+    "ayahStart": 1,
+    "surahEnd": 41,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 478,
+    "juz": 24,
+    "surahStart": 41,
+    "ayahStart": 12,
+    "surahEnd": 41,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 479,
+    "juz": 24,
+    "surahStart": 41,
+    "ayahStart": 21,
+    "surahEnd": 41,
+    "ayahEnd": 29
+  },
+  {
+    "pageNumber": 480,
+    "juz": 24,
+    "surahStart": 41,
+    "ayahStart": 30,
+    "surahEnd": 41,
+    "ayahEnd": 38
+  },
+  {
+    "pageNumber": 481,
+    "juz": 24,
+    "surahStart": 41,
+    "ayahStart": 39,
+    "surahEnd": 41,
+    "ayahEnd": 46
+  },
+  {
+    "pageNumber": 482,
+    "juz": 25,
+    "surahStart": 41,
+    "ayahStart": 47,
+    "surahEnd": 41,
+    "ayahEnd": 54
+  },
+  {
+    "pageNumber": 483,
+    "juz": 25,
+    "surahStart": 42,
+    "ayahStart": 1,
+    "surahEnd": 42,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 484,
+    "juz": 25,
+    "surahStart": 42,
+    "ayahStart": 11,
+    "surahEnd": 42,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 485,
+    "juz": 25,
+    "surahStart": 42,
+    "ayahStart": 16,
+    "surahEnd": 42,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 486,
+    "juz": 25,
+    "surahStart": 42,
+    "ayahStart": 23,
+    "surahEnd": 42,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 487,
+    "juz": 25,
+    "surahStart": 42,
+    "ayahStart": 32,
+    "surahEnd": 42,
+    "ayahEnd": 44
+  },
+  {
+    "pageNumber": 488,
+    "juz": 25,
+    "surahStart": 42,
+    "ayahStart": 45,
+    "surahEnd": 42,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 489,
+    "juz": 25,
+    "surahStart": 42,
+    "ayahStart": 52,
+    "surahEnd": 43,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 490,
+    "juz": 25,
+    "surahStart": 43,
+    "ayahStart": 11,
+    "surahEnd": 43,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 491,
+    "juz": 25,
+    "surahStart": 43,
+    "ayahStart": 23,
+    "surahEnd": 43,
+    "ayahEnd": 33
+  },
+  {
+    "pageNumber": 492,
+    "juz": 25,
+    "surahStart": 43,
+    "ayahStart": 34,
+    "surahEnd": 43,
+    "ayahEnd": 47
+  },
+  {
+    "pageNumber": 493,
+    "juz": 25,
+    "surahStart": 43,
+    "ayahStart": 48,
+    "surahEnd": 43,
+    "ayahEnd": 60
+  },
+  {
+    "pageNumber": 494,
+    "juz": 25,
+    "surahStart": 43,
+    "ayahStart": 61,
+    "surahEnd": 43,
+    "ayahEnd": 73
+  },
+  {
+    "pageNumber": 495,
+    "juz": 25,
+    "surahStart": 43,
+    "ayahStart": 74,
+    "surahEnd": 43,
+    "ayahEnd": 89
+  },
+  {
+    "pageNumber": 496,
+    "juz": 25,
+    "surahStart": 44,
+    "ayahStart": 1,
+    "surahEnd": 44,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 497,
+    "juz": 25,
+    "surahStart": 44,
+    "ayahStart": 19,
+    "surahEnd": 44,
+    "ayahEnd": 39
+  },
+  {
+    "pageNumber": 498,
+    "juz": 25,
+    "surahStart": 44,
+    "ayahStart": 40,
+    "surahEnd": 44,
+    "ayahEnd": 59
+  },
+  {
+    "pageNumber": 499,
+    "juz": 25,
+    "surahStart": 45,
+    "ayahStart": 1,
+    "surahEnd": 45,
+    "ayahEnd": 13
+  },
+  {
+    "pageNumber": 500,
+    "juz": 25,
+    "surahStart": 45,
+    "ayahStart": 14,
+    "surahEnd": 45,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 501,
+    "juz": 25,
+    "surahStart": 45,
+    "ayahStart": 23,
+    "surahEnd": 45,
+    "ayahEnd": 32
+  },
+  {
+    "pageNumber": 502,
+    "juz": 25,
+    "surahStart": 45,
+    "ayahStart": 33,
+    "surahEnd": 46,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 503,
+    "juz": 26,
+    "surahStart": 46,
+    "ayahStart": 6,
+    "surahEnd": 46,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 504,
+    "juz": 26,
+    "surahStart": 46,
+    "ayahStart": 15,
+    "surahEnd": 46,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 505,
+    "juz": 26,
+    "surahStart": 46,
+    "ayahStart": 21,
+    "surahEnd": 46,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 506,
+    "juz": 26,
+    "surahStart": 46,
+    "ayahStart": 29,
+    "surahEnd": 46,
+    "ayahEnd": 35
+  },
+  {
+    "pageNumber": 507,
+    "juz": 26,
+    "surahStart": 47,
+    "ayahStart": 1,
+    "surahEnd": 47,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 508,
+    "juz": 26,
+    "surahStart": 47,
+    "ayahStart": 12,
+    "surahEnd": 47,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 509,
+    "juz": 26,
+    "surahStart": 47,
+    "ayahStart": 20,
+    "surahEnd": 47,
+    "ayahEnd": 29
+  },
+  {
+    "pageNumber": 510,
+    "juz": 26,
+    "surahStart": 47,
+    "ayahStart": 30,
+    "surahEnd": 47,
+    "ayahEnd": 38
+  },
+  {
+    "pageNumber": 511,
+    "juz": 26,
+    "surahStart": 48,
+    "ayahStart": 1,
+    "surahEnd": 48,
+    "ayahEnd": 9
+  },
+  {
+    "pageNumber": 512,
+    "juz": 26,
+    "surahStart": 48,
+    "ayahStart": 10,
+    "surahEnd": 48,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 513,
+    "juz": 26,
+    "surahStart": 48,
+    "ayahStart": 16,
+    "surahEnd": 48,
+    "ayahEnd": 23
+  },
+  {
+    "pageNumber": 514,
+    "juz": 26,
+    "surahStart": 48,
+    "ayahStart": 24,
+    "surahEnd": 48,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 515,
+    "juz": 26,
+    "surahStart": 48,
+    "ayahStart": 29,
+    "surahEnd": 49,
+    "ayahEnd": 4
+  },
+  {
+    "pageNumber": 516,
+    "juz": 26,
+    "surahStart": 49,
+    "ayahStart": 5,
+    "surahEnd": 49,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 517,
+    "juz": 26,
+    "surahStart": 49,
+    "ayahStart": 12,
+    "surahEnd": 49,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 518,
+    "juz": 26,
+    "surahStart": 50,
+    "ayahStart": 1,
+    "surahEnd": 50,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 519,
+    "juz": 26,
+    "surahStart": 50,
+    "ayahStart": 16,
+    "surahEnd": 50,
+    "ayahEnd": 35
+  },
+  {
+    "pageNumber": 520,
+    "juz": 26,
+    "surahStart": 50,
+    "ayahStart": 36,
+    "surahEnd": 51,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 521,
+    "juz": 26,
+    "surahStart": 51,
+    "ayahStart": 7,
+    "surahEnd": 51,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 522,
+    "juz": 27,
+    "surahStart": 51,
+    "ayahStart": 31,
+    "surahEnd": 51,
+    "ayahEnd": 51
+  },
+  {
+    "pageNumber": 523,
+    "juz": 27,
+    "surahStart": 51,
+    "ayahStart": 52,
+    "surahEnd": 52,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 524,
+    "juz": 27,
+    "surahStart": 52,
+    "ayahStart": 15,
+    "surahEnd": 52,
+    "ayahEnd": 31
+  },
+  {
+    "pageNumber": 525,
+    "juz": 27,
+    "surahStart": 52,
+    "ayahStart": 32,
+    "surahEnd": 52,
+    "ayahEnd": 49
+  },
+  {
+    "pageNumber": 526,
+    "juz": 27,
+    "surahStart": 53,
+    "ayahStart": 1,
+    "surahEnd": 53,
+    "ayahEnd": 26
+  },
+  {
+    "pageNumber": 527,
+    "juz": 27,
+    "surahStart": 53,
+    "ayahStart": 27,
+    "surahEnd": 53,
+    "ayahEnd": 44
+  },
+  {
+    "pageNumber": 528,
+    "juz": 27,
+    "surahStart": 53,
+    "ayahStart": 45,
+    "surahEnd": 54,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 529,
+    "juz": 27,
+    "surahStart": 54,
+    "ayahStart": 7,
+    "surahEnd": 54,
+    "ayahEnd": 27
+  },
+  {
+    "pageNumber": 530,
+    "juz": 27,
+    "surahStart": 54,
+    "ayahStart": 28,
+    "surahEnd": 54,
+    "ayahEnd": 49
+  },
+  {
+    "pageNumber": 531,
+    "juz": 27,
+    "surahStart": 54,
+    "ayahStart": 50,
+    "surahEnd": 55,
+    "ayahEnd": 16
+  },
+  {
+    "pageNumber": 532,
+    "juz": 27,
+    "surahStart": 55,
+    "ayahStart": 17,
+    "surahEnd": 55,
+    "ayahEnd": 40
+  },
+  {
+    "pageNumber": 533,
+    "juz": 27,
+    "surahStart": 55,
+    "ayahStart": 41,
+    "surahEnd": 55,
+    "ayahEnd": 67
+  },
+  {
+    "pageNumber": 534,
+    "juz": 27,
+    "surahStart": 55,
+    "ayahStart": 68,
+    "surahEnd": 56,
+    "ayahEnd": 16
+  },
+  {
+    "pageNumber": 535,
+    "juz": 27,
+    "surahStart": 56,
+    "ayahStart": 17,
+    "surahEnd": 56,
+    "ayahEnd": 50
+  },
+  {
+    "pageNumber": 536,
+    "juz": 27,
+    "surahStart": 56,
+    "ayahStart": 51,
+    "surahEnd": 56,
+    "ayahEnd": 76
+  },
+  {
+    "pageNumber": 537,
+    "juz": 27,
+    "surahStart": 56,
+    "ayahStart": 77,
+    "surahEnd": 57,
+    "ayahEnd": 3
+  },
+  {
+    "pageNumber": 538,
+    "juz": 27,
+    "surahStart": 57,
+    "ayahStart": 4,
+    "surahEnd": 57,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 539,
+    "juz": 27,
+    "surahStart": 57,
+    "ayahStart": 12,
+    "surahEnd": 57,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 540,
+    "juz": 27,
+    "surahStart": 57,
+    "ayahStart": 19,
+    "surahEnd": 57,
+    "ayahEnd": 24
+  },
+  {
+    "pageNumber": 541,
+    "juz": 27,
+    "surahStart": 57,
+    "ayahStart": 25,
+    "surahEnd": 57,
+    "ayahEnd": 29
+  },
+  {
+    "pageNumber": 542,
+    "juz": 28,
+    "surahStart": 58,
+    "ayahStart": 1,
+    "surahEnd": 58,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 543,
+    "juz": 28,
+    "surahStart": 58,
+    "ayahStart": 7,
+    "surahEnd": 58,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 544,
+    "juz": 28,
+    "surahStart": 58,
+    "ayahStart": 12,
+    "surahEnd": 58,
+    "ayahEnd": 21
+  },
+  {
+    "pageNumber": 545,
+    "juz": 28,
+    "surahStart": 58,
+    "ayahStart": 22,
+    "surahEnd": 59,
+    "ayahEnd": 3
+  },
+  {
+    "pageNumber": 546,
+    "juz": 28,
+    "surahStart": 59,
+    "ayahStart": 4,
+    "surahEnd": 59,
+    "ayahEnd": 9
+  },
+  {
+    "pageNumber": 547,
+    "juz": 28,
+    "surahStart": 59,
+    "ayahStart": 10,
+    "surahEnd": 59,
+    "ayahEnd": 16
+  },
+  {
+    "pageNumber": 548,
+    "juz": 28,
+    "surahStart": 59,
+    "ayahStart": 17,
+    "surahEnd": 59,
+    "ayahEnd": 24
+  },
+  {
+    "pageNumber": 549,
+    "juz": 28,
+    "surahStart": 60,
+    "ayahStart": 1,
+    "surahEnd": 60,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 550,
+    "juz": 28,
+    "surahStart": 60,
+    "ayahStart": 6,
+    "surahEnd": 60,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 551,
+    "juz": 28,
+    "surahStart": 60,
+    "ayahStart": 12,
+    "surahEnd": 61,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 552,
+    "juz": 28,
+    "surahStart": 61,
+    "ayahStart": 6,
+    "surahEnd": 61,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 553,
+    "juz": 28,
+    "surahStart": 62,
+    "ayahStart": 1,
+    "surahEnd": 62,
+    "ayahEnd": 8
+  },
+  {
+    "pageNumber": 554,
+    "juz": 28,
+    "surahStart": 62,
+    "ayahStart": 9,
+    "surahEnd": 63,
+    "ayahEnd": 4
+  },
+  {
+    "pageNumber": 555,
+    "juz": 28,
+    "surahStart": 63,
+    "ayahStart": 5,
+    "surahEnd": 63,
+    "ayahEnd": 11
+  },
+  {
+    "pageNumber": 556,
+    "juz": 28,
+    "surahStart": 64,
+    "ayahStart": 1,
+    "surahEnd": 64,
+    "ayahEnd": 9
+  },
+  {
+    "pageNumber": 557,
+    "juz": 28,
+    "surahStart": 64,
+    "ayahStart": 10,
+    "surahEnd": 64,
+    "ayahEnd": 18
+  },
+  {
+    "pageNumber": 558,
+    "juz": 28,
+    "surahStart": 65,
+    "ayahStart": 1,
+    "surahEnd": 65,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 559,
+    "juz": 28,
+    "surahStart": 65,
+    "ayahStart": 6,
+    "surahEnd": 65,
+    "ayahEnd": 12
+  },
+  {
+    "pageNumber": 560,
+    "juz": 28,
+    "surahStart": 66,
+    "ayahStart": 1,
+    "surahEnd": 66,
+    "ayahEnd": 7
+  },
+  {
+    "pageNumber": 561,
+    "juz": 28,
+    "surahStart": 66,
+    "ayahStart": 8,
+    "surahEnd": 66,
+    "ayahEnd": 12
+  },
+  {
+    "pageNumber": 562,
+    "juz": 29,
+    "surahStart": 67,
+    "ayahStart": 1,
+    "surahEnd": 67,
+    "ayahEnd": 12
+  },
+  {
+    "pageNumber": 563,
+    "juz": 29,
+    "surahStart": 67,
+    "ayahStart": 13,
+    "surahEnd": 67,
+    "ayahEnd": 26
+  },
+  {
+    "pageNumber": 564,
+    "juz": 29,
+    "surahStart": 67,
+    "ayahStart": 27,
+    "surahEnd": 68,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 565,
+    "juz": 29,
+    "surahStart": 68,
+    "ayahStart": 16,
+    "surahEnd": 68,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 566,
+    "juz": 29,
+    "surahStart": 68,
+    "ayahStart": 43,
+    "surahEnd": 69,
+    "ayahEnd": 8
+  },
+  {
+    "pageNumber": 567,
+    "juz": 29,
+    "surahStart": 69,
+    "ayahStart": 9,
+    "surahEnd": 69,
+    "ayahEnd": 34
+  },
+  {
+    "pageNumber": 568,
+    "juz": 29,
+    "surahStart": 69,
+    "ayahStart": 35,
+    "surahEnd": 70,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 569,
+    "juz": 29,
+    "surahStart": 70,
+    "ayahStart": 11,
+    "surahEnd": 70,
+    "ayahEnd": 39
+  },
+  {
+    "pageNumber": 570,
+    "juz": 29,
+    "surahStart": 70,
+    "ayahStart": 40,
+    "surahEnd": 71,
+    "ayahEnd": 10
+  },
+  {
+    "pageNumber": 571,
+    "juz": 29,
+    "surahStart": 71,
+    "ayahStart": 11,
+    "surahEnd": 71,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 572,
+    "juz": 29,
+    "surahStart": 72,
+    "ayahStart": 1,
+    "surahEnd": 72,
+    "ayahEnd": 13
+  },
+  {
+    "pageNumber": 573,
+    "juz": 29,
+    "surahStart": 72,
+    "ayahStart": 14,
+    "surahEnd": 72,
+    "ayahEnd": 28
+  },
+  {
+    "pageNumber": 574,
+    "juz": 29,
+    "surahStart": 73,
+    "ayahStart": 1,
+    "surahEnd": 73,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 575,
+    "juz": 29,
+    "surahStart": 73,
+    "ayahStart": 20,
+    "surahEnd": 74,
+    "ayahEnd": 17
+  },
+  {
+    "pageNumber": 576,
+    "juz": 29,
+    "surahStart": 74,
+    "ayahStart": 18,
+    "surahEnd": 74,
+    "ayahEnd": 47
+  },
+  {
+    "pageNumber": 577,
+    "juz": 29,
+    "surahStart": 74,
+    "ayahStart": 48,
+    "surahEnd": 75,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 578,
+    "juz": 29,
+    "surahStart": 75,
+    "ayahStart": 20,
+    "surahEnd": 76,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 579,
+    "juz": 29,
+    "surahStart": 76,
+    "ayahStart": 6,
+    "surahEnd": 76,
+    "ayahEnd": 25
+  },
+  {
+    "pageNumber": 580,
+    "juz": 29,
+    "surahStart": 76,
+    "ayahStart": 26,
+    "surahEnd": 77,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 581,
+    "juz": 29,
+    "surahStart": 77,
+    "ayahStart": 20,
+    "surahEnd": 77,
+    "ayahEnd": 50
+  },
+  {
+    "pageNumber": 582,
+    "juz": 30,
+    "surahStart": 78,
+    "ayahStart": 1,
+    "surahEnd": 78,
+    "ayahEnd": 30
+  },
+  {
+    "pageNumber": 583,
+    "juz": 30,
+    "surahStart": 78,
+    "ayahStart": 31,
+    "surahEnd": 79,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 584,
+    "juz": 30,
+    "surahStart": 79,
+    "ayahStart": 16,
+    "surahEnd": 79,
+    "ayahEnd": 46
+  },
+  {
+    "pageNumber": 585,
+    "juz": 30,
+    "surahStart": 80,
+    "ayahStart": 1,
+    "surahEnd": 80,
+    "ayahEnd": 42
+  },
+  {
+    "pageNumber": 586,
+    "juz": 30,
+    "surahStart": 81,
+    "ayahStart": 1,
+    "surahEnd": 81,
+    "ayahEnd": 29
+  },
+  {
+    "pageNumber": 587,
+    "juz": 30,
+    "surahStart": 82,
+    "ayahStart": 1,
+    "surahEnd": 83,
+    "ayahEnd": 6
+  },
+  {
+    "pageNumber": 588,
+    "juz": 30,
+    "surahStart": 83,
+    "ayahStart": 7,
+    "surahEnd": 83,
+    "ayahEnd": 34
+  },
+  {
+    "pageNumber": 589,
+    "juz": 30,
+    "surahStart": 83,
+    "ayahStart": 35,
+    "surahEnd": 84,
+    "ayahEnd": 25
+  },
+  {
+    "pageNumber": 590,
+    "juz": 30,
+    "surahStart": 85,
+    "ayahStart": 1,
+    "surahEnd": 85,
+    "ayahEnd": 22
+  },
+  {
+    "pageNumber": 591,
+    "juz": 30,
+    "surahStart": 86,
+    "ayahStart": 1,
+    "surahEnd": 87,
+    "ayahEnd": 15
+  },
+  {
+    "pageNumber": 592,
+    "juz": 30,
+    "surahStart": 87,
+    "ayahStart": 16,
+    "surahEnd": 88,
+    "ayahEnd": 26
+  },
+  {
+    "pageNumber": 593,
+    "juz": 30,
+    "surahStart": 89,
+    "ayahStart": 1,
+    "surahEnd": 89,
+    "ayahEnd": 23
+  },
+  {
+    "pageNumber": 594,
+    "juz": 30,
+    "surahStart": 89,
+    "ayahStart": 24,
+    "surahEnd": 90,
+    "ayahEnd": 20
+  },
+  {
+    "pageNumber": 595,
+    "juz": 30,
+    "surahStart": 91,
+    "ayahStart": 1,
+    "surahEnd": 92,
+    "ayahEnd": 14
+  },
+  {
+    "pageNumber": 596,
+    "juz": 30,
+    "surahStart": 92,
+    "ayahStart": 15,
+    "surahEnd": 94,
+    "ayahEnd": 8
+  },
+  {
+    "pageNumber": 597,
+    "juz": 30,
+    "surahStart": 95,
+    "ayahStart": 1,
+    "surahEnd": 96,
+    "ayahEnd": 19
+  },
+  {
+    "pageNumber": 598,
+    "juz": 30,
+    "surahStart": 97,
+    "ayahStart": 1,
+    "surahEnd": 98,
+    "ayahEnd": 7
+  },
+  {
+    "pageNumber": 599,
+    "juz": 30,
+    "surahStart": 98,
+    "ayahStart": 8,
+    "surahEnd": 100,
+    "ayahEnd": 9
+  },
+  {
+    "pageNumber": 600,
+    "juz": 30,
+    "surahStart": 100,
+    "ayahStart": 10,
+    "surahEnd": 102,
+    "ayahEnd": 8
+  },
+  {
+    "pageNumber": 601,
+    "juz": 30,
+    "surahStart": 103,
+    "ayahStart": 1,
+    "surahEnd": 105,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 602,
+    "juz": 30,
+    "surahStart": 106,
+    "ayahStart": 1,
+    "surahEnd": 108,
+    "ayahEnd": 3
+  },
+  {
+    "pageNumber": 603,
+    "juz": 30,
+    "surahStart": 109,
+    "ayahStart": 1,
+    "surahEnd": 111,
+    "ayahEnd": 5
+  },
+  {
+    "pageNumber": 604,
+    "juz": 30,
+    "surahStart": 112,
+    "ayahStart": 1,
+    "surahEnd": 114,
+    "ayahEnd": 6
+  }
+]

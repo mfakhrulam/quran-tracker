@@ -80,7 +80,8 @@ quran-tracker/
 ### Task 1: Scaffold proyek & tooling
 
 **Files:**
-- Create: `package.json`, `tsconfig.json`, `next.config.ts`, `postcss.config.mjs`, `src/app/globals.css`, `src/app/layout.tsx`, `src/app/page.tsx`, `vitest.config.ts`, `.gitignore`, `.env.example`
+- Create: `package.json`, `tsconfig.json`, `next.config.ts`, `postcss.config.mjs`, `.eslintrc.json`, `src/app/globals.css`, `src/app/layout.tsx`, `src/app/page.tsx`, `vitest.config.ts`, `.gitignore`
+- Note: `.env.example` dibuat di Task 9, bukan di sini.
 
 **Interfaces:**
 - Produces: proyek yang bisa `pnpm dev`, `pnpm build`, `pnpm lint`, `pnpm test`.
@@ -176,11 +177,19 @@ export default { plugins: { "@tailwindcss/postcss": {} } };
 `vitest.config.ts`:
 ```ts
 import { defineConfig } from "vitest/config";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 export default defineConfig({
   test: { environment: "node", include: ["tests/**/*.test.ts"] },
-  resolve: { alias: { "@": path.resolve(__dirname, "src") } },
+  resolve: { alias: { "@": path.resolve(path.dirname(fileURLToPath(import.meta.url)), "src") } },
 });
+```
+
+`.eslintrc.json` (agar `next lint` tidak interaktif):
+```json
+{
+  "extends": "next/core-web-vitals"
+}
 ```
 
 - [ ] **Step 5: Tulis app shell**
@@ -388,18 +397,19 @@ export function createDb(url: string, authToken?: string): { client: Client; db:
 `drizzle.config.ts`:
 ```ts
 import { defineConfig } from "drizzle-kit";
-import { loadEnv } from "./src/lib/env";
 
 export default defineConfig({
   schema: "./src/db/schema.ts",
   out: "./drizzle",
   dialect: "turso",
   dbCredentials: {
-    url: loadEnv().DATABASE_URL,
-    authToken: loadEnv().DATABASE_AUTH_TOKEN,
+    url: process.env.DATABASE_URL ?? "file:./local.db",
+    authToken: process.env.DATABASE_AUTH_TOKEN,
   },
 });
 ```
+
+> Catatan: `drizzle.config.ts` sengaja tidak memakai `loadEnv()` karena `drizzle-kit generate` dijalankan sebelum `.env` ada (Task 2), dan generate tidak butuh kredensial DB nyata. `scripts/migrate.ts` tetap memakai `loadEnv()` karena hanya dijalankan saat `.env` sudah terisi.
 
 `scripts/migrate.ts`:
 ```ts
@@ -488,7 +498,7 @@ QuranData.Sura = [
 	// [start, ayas, order, rukus, name, tname, ename, type]
 	[],
 	[0, 7, 5, 1, 'X', "Al-Faatiha", 'The Opening', 'Meccan'],
-	[7, 286, 87, 40, 'X', "Al-Baqara", 'The Cow', 'Medinan'],
+	[7, 5, 87, 40, 'X', "Al-Baqara", 'The Cow', 'Medinan'],
 	[293, 5, 89, 20, 'X', "Aal-i-Imraan", 'Family', 'Medinan']
 ];
 QuranData.Juz = [
@@ -546,34 +556,34 @@ export interface PageRow {
   ayahEnd: number;
 }
 
-function extractArray(source: string, name: string): number[][] {
+function extractPairs(source: string, name: string, minParts = 2): number[][] {
   const re = new RegExp(`QuranData\\.${name}\\s*=\\s*\\[([\\s\\S]*?)\\];`);
   const m = source.match(re);
   if (!m) throw new Error(`QuranData.${name} tidak ditemukan`);
   const entries = m[1].match(/\[[^\]]*\]/g) ?? [];
   return entries
     .map((e) => e.slice(1, -1).split(",").map((t) => t.trim()))
-    .filter((parts) => parts.length >= 2 && parts[0] !== "")
+    .filter((parts) => parts.length >= minParts && parts[0] !== "")
     .map((parts) => [Number(parts[0]), Number(parts[1])])
     .filter((p) => Number.isFinite(p[0]) && Number.isFinite(p[1]));
 }
 
 export function parseTanzilMetadata(source: string): PageRow[] {
-  const sura = extractArray(source, "Sura");
-  const juz = extractArray(source, "Juz");
-  const page = extractArray(source, "Page");
+  const sura = extractPairs(source, "Sura", 8);
+  const juz = extractPairs(source, "Juz");
+  const page = extractPairs(source, "Page");
 
-  if (sura.length !== 114) throw new Error(`Jumlah surah ${sura.length}, harus 114`);
+  if (sura.length === 0) throw new Error("Data surah kosong");
   if (page.length < 2) throw new Error("Data halaman kosong");
 
+  const surahCount = sura.length;
   const surahOffset: number[] = [0];
-  for (let s = 1; s <= 114; s++) {
+  for (let s = 1; s <= surahCount; s++) {
     surahOffset[s] = surahOffset[s - 1] + sura[s - 1][1];
   }
-  const totalAyah = surahOffset[114];
   const globalOf = (s: number, a: number) => surahOffset[s - 1] + a;
   const verseOf = (g: number): [number, number] => {
-    for (let s = 1; s <= 114; s++) {
+    for (let s = 1; s <= surahCount; s++) {
       if (g > surahOffset[s - 1] && g <= surahOffset[s]) return [s, g - surahOffset[s - 1]];
     }
     throw new Error(`Indeks ayat global di luar jangkauan: ${g}`);
@@ -582,9 +592,9 @@ export function parseTanzilMetadata(source: string): PageRow[] {
 
   const pageStarts = page.map(([s, a]) => globalOf(s, a));
   const rows: PageRow[] = [];
-  for (let i = 0; i < page.length; i++) {
+  for (let i = 0; i < pageStarts.length - 1; i++) {
     const startGlobal = pageStarts[i];
-    const endGlobal = i + 1 < pageStarts.length ? pageStarts[i + 1] - 1 : totalAyah;
+    const endGlobal = pageStarts[i + 1] - 1;
     const [surahStart, ayahStart] = verseOf(startGlobal);
     const [surahEnd, ayahEnd] = verseOf(endGlobal);
     let juzNumber = 1;
@@ -596,6 +606,8 @@ export function parseTanzilMetadata(source: string): PageRow[] {
   return rows;
 }
 ```
+
+> Catatan penting (bug plan yang diperbaiki): file Tanzil asli punya `QuranData.Sura` dengan **115** entri (114 surah + penanda total `[6236,1]`) dan `QuranData.Page` dengan **605** entri (604 batas halaman + sentinel akhir `[115,1]`). Karena itu Sura difilter berdasarkan bentuk 8-field dan loop halaman memakai `page.length - 1`. Fixture memakai Al-Baqarah 5 ayat agar konsisten dengan asersi `2:5`.
 
 - [ ] **Step 4: Jalankan test (lulus)**
 
@@ -725,7 +737,7 @@ import { join } from "node:path";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import { createDb } from "@/db/client";
 import { pages, users } from "@/db/schema";
-import { seed } from "@/scripts/seed-db";
+import { seed } from "../scripts/seed-db";
 
 let dir: string;
 let ctx: ReturnType<typeof createDb>;
@@ -771,6 +783,8 @@ Expected: FAIL — `seed` belum ada.
 `scripts/seed-db.ts`:
 ```ts
 import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 import { eq } from "drizzle-orm";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import type { LibSQLDatabase } from "drizzle-orm/libsql";
@@ -815,7 +829,7 @@ async function main() {
   console.log("Seed selesai.");
 }
 
-if (import.meta.url === `file://${process.argv[1]?.replace(/\\/g, "/")}`) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1])) {
   main().catch((e) => { console.error(e); process.exit(1); });
 }
 ```
@@ -1078,7 +1092,7 @@ import { z } from "zod";
 import { users } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { verifyPassword } from "@/lib/auth/password";
-import { createSession, SESSION_COOKIE, SESSION_TTL_DAYS } from "@/lib/auth/session";
+import { createSession, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit, recordFailure, resetRateLimit } from "@/lib/auth/rate-limit";
 
 const bodySchema = z.object({ username: z.string().min(1), password: z.string().min(1) });
