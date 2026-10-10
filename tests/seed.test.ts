@@ -6,7 +6,7 @@ import v8 from "node:v8";
 import vm from "node:vm";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import { createDb } from "@/db/client";
-import { pages, users } from "@/db/schema";
+import { pages, users, settings } from "@/db/schema";
 import { seed } from "../scripts/seed-db";
 
 function forceGc(): void {
@@ -57,5 +57,16 @@ describe("seed", () => {
     expect((await c2.db.select().from(users)).length).toBe(0);
     c2.client.close();
     safeRm(d2);
+  });
+  it("mengisi settings default secara idempotent", async () => {
+    const rows = await ctx.db.select().from(settings);
+    const keys = rows.map((r) => r.key);
+    expect(keys).toContain("sabqi_window_days");
+    expect(keys).toContain("manzil_cycle_days");
+    expect(keys).toContain("daily_load_limit");
+    expect(keys).toContain("label_sabaq");
+    const before = rows.length;
+    await seed(ctx.db, {});
+    expect((await ctx.db.select().from(settings)).length).toBe(before);
   });
 });
