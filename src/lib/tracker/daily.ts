@@ -14,6 +14,18 @@ import {
 
 export type StatusRecord = typeof memorizationStatus.$inferSelect;
 
+/**
+ * Baris status setelah melewati `unstable_cache`.
+ *
+ * `unstable_cache` menyimpan nilainya sebagai JSON, jadi kolom timestamp
+ * kembali sebagai string ISO, bukan `Date`. Tipe ini jujur soal itu supaya
+ * pemanggil tidak memanggil method `Date` pada string.
+ */
+export type StatusSourceRow = Omit<StatusRecord, "memorizedAt" | "lastReviewedAt"> & {
+  memorizedAt: Date | string | null;
+  lastReviewedAt: Date | string | null;
+};
+
 export interface DayLog {
   date: string;
   pageNumber: number;
@@ -22,7 +34,7 @@ export interface DayLog {
 }
 
 export interface DailySource {
-  statuses: StatusRecord[];
+  statuses: StatusSourceRow[];
   logs: DayLog[];
   settings: AppSettings;
 }
@@ -33,6 +45,17 @@ export interface DailyTasksResult {
 }
 
 /**
+ * Menormalkan nilai tanggal dari DB (`Date`), dari cache (`string` ISO hasil
+ * JSON), atau kosong, menjadi `YYYY-MM-DD` zona Jakarta.
+ */
+function toISODate(value: Date | string | number | null | undefined, fallback: string): string {
+  if (value === null || value === undefined) return fallback;
+  const date = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(date.getTime())) return fallback;
+  return todayISO(date);
+}
+
+/**
  * Mengubah baris `memorization_status` menjadi jadwal yang bisa dihitung.
  *
  * Baris dengan jadwal kosong (data lama sebelum Fase 3 pernah di-recompute)
@@ -40,11 +63,11 @@ export interface DailyTasksResult {
  * dari `memorizedAt`. Dengan begitu tidak ada hafalan yang "hilang" dari
  * daftar hanya karena `db:recompute` belum dijalankan.
  */
-function toSchedules(statuses: StatusRecord[], date: string): PageSchedule[] {
+function toSchedules(statuses: StatusSourceRow[], date: string): PageSchedule[] {
   return statuses.map((row) => {
     const intervalDays = row.intervalDays > 0 ? row.intervalDays : 1;
-    const memorizedAt = row.memorizedAt ? todayISO(row.memorizedAt) : date;
-    const lastReviewedAt = row.lastReviewedAt ? todayISO(row.lastReviewedAt) : memorizedAt;
+    const memorizedAt = toISODate(row.memorizedAt, date);
+    const lastReviewedAt = toISODate(row.lastReviewedAt, memorizedAt);
     return {
       pageNumber: row.pageNumber,
       status: isQuality(row.status) ? row.status : "baru",

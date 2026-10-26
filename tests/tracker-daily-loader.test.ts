@@ -180,4 +180,55 @@ describe("buildDailyPlan", () => {
     expect(plan.done).toHaveLength(1);
     expect(plan.done[0].pageNumber).toBe(3);
   });
+
+  it("menerima tanggal berbentuk string dari unstable_cache", () => {
+    // unstable_cache men-serialisasi lewat JSON, jadi timestamp kembali sebagai
+    // string ISO. Memanggil Intl pada string melempar RangeError di produksi.
+    const plan = buildDailyPlan(
+      {
+        statuses: [
+          {
+            pageNumber: 1,
+            status: "lancar",
+            memorizedAt: "2026-10-20T00:00:00.000Z" as unknown as Date,
+            lastReviewedAt: "2026-10-20T00:00:00.000Z" as unknown as Date,
+            intervalDays: 1,
+            nextReviewDate: null,
+          },
+        ],
+        logs: [],
+        settings: parseSettings([]),
+      },
+      TODAY,
+    );
+
+    expect(plan.manzilTotal + plan.sabqi.length).toBeGreaterThan(0);
+    expect(plan.sabqi[0]?.memorizedAt).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+  });
+
+  it("jatuh ke fallback saat tanggal tidak bisa diparse", () => {
+    const plan = buildDailyPlan(
+      {
+        statuses: [
+          {
+            pageNumber: 2,
+            status: "lancar",
+            memorizedAt: "not-a-date" as unknown as Date,
+            lastReviewedAt: null,
+            intervalDays: 0,
+            // Jadwal eksplisit supaya halaman memang jatuh tempo hari ini.
+            nextReviewDate: TODAY,
+          },
+        ],
+        logs: [],
+        settings: parseSettings([]),
+      },
+      TODAY,
+    );
+    // Fallback ke hari ini -> dianggap hafalan baru, jadi jalur sabqi. Yang
+    // penting: tidak ada RangeError dari Intl dan tanggalnya jadi ISO valid.
+    expect(plan.sabqi).toHaveLength(1);
+    expect(plan.sabqi[0].memorizedAt).toBe(TODAY);
+    expect(plan.manzilTotal).toBe(0);
+  });
 });
