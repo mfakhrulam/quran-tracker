@@ -1,6 +1,6 @@
 # Tracker Hafalan Al-Qur'an
 
-Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Fase 1 mencakup fondasi: login satu akun (tanpa registrasi), dashboard terproteksi, skema database, dan data mushaf statis.
+Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Sudah mencakup login satu akun (tanpa registrasi), pencatatan setoran dan murajaah, peta progres berwarna, target khatam dengan proyeksi, serta penjadwalan murajaah otomatis (sabqi dan manzil).
 
 ## Prasyarat
 
@@ -85,6 +85,25 @@ Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Fase 1 m
    Setelah seed selesai, `OWNER_USERNAME`/`OWNER_PASSWORD` tidak lagi diperlukan di produksi.
 
 4. Deploy proyek ke Vercel seperti biasa.
+
+## Murajaah Otomatis (Fase 3)
+
+Jadwal murajaah diturunkan ulang dari riwayat setiap kali ada log baru, diedit, atau dihapus — bukan di-increment. Dengan begitu mengedit tanggal atau menghapus log selalu menghasilkan jadwal yang benar.
+
+Dua jalur:
+
+- **Sabqi** — hafalan lebih muda dari `sabqi_window_days`, diulang lewat interval. Mutqin menggandakan interval, lancar menambah setengah, lemah/baru mereset ke 1 hari. Dibatasi `interval_cap_days`.
+- **Manzil** — hafalan lama, dirotasi berdasarkan nomor halaman sehingga seluruh hafalan tersentuh dalam `manzil_cycle_days`.
+
+`daily_load_limit` membatasi jumlah halaman yang ditampilkan per hari. Sabqi menang klaim kapasitas; manzil mendapat sisa; sisanya dilaporkan sebagai "ditunda", tidak disembunyikan.
+
+Parameter diubah di `/pengaturan`. Setelah menarik kode Fase 3 pada database yang sudah berisi data, jalankan sekali:
+
+```powershell
+pnpm db:recompute
+```
+
+Perintah ini mengisi `interval_days` dan `next_review_date` untuk halaman yang sudah ada. Tanpa itu aplikasi tetap berjalan (jadwal kosong dianggap jatuh tempo), tetapi daftar murajaah jadi kurang presisi sampai dijalankan.
 
 ## Batasan
 
