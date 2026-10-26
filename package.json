@@ -13,7 +13,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "tsx --env-file-if-exists=.env scripts/migrate.ts",
     "mushaf:fetch": "tsx scripts/fetch-mushaf.ts",
-    "db:seed": "tsx --env-file-if-exists=.env scripts/seed-db.ts"
+    "db:seed": "tsx --env-file-if-exists=.env scripts/seed-db.ts",
+    "db:recompute": "tsx --env-file-if-exists=.env scripts/recompute.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
