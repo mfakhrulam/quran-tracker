@@ -2,13 +2,18 @@ import { notInArray } from "drizzle-orm";
 import type { LibSQLDatabase } from "drizzle-orm/libsql";
 import { sessionsLog, memorizationStatus } from "@/db/schema";
 import type * as schema from "@/db/schema";
+import { loadSettings } from "@/lib/settings";
+import { replayPageSchedule } from "./schedule";
+import type { Quality, SessionType } from "./quality";
 
 /**
  * Menurunkan ulang `memorization_status` dari `sessions_log`.
  *
- * `memorization_status` adalah data turunan, bukan sumber kebenaran: status
- * sebuah halaman = kualitas `sabaq` terbaru, `memorizedAt` = tanggal `sabaq`
- * pertama, `lastReviewedAt` = tanggal log terakhir (sabaq/sabqi/manzil).
+ * `memorization_status` adalah data turunan, bukan sumber kebenaran:
+ * - status         = kualitas `sabaq` terbaru
+ * - memorizedAt    = tanggal `sabaq` pertama
+ * - lastReviewedAt = tanggal log terakhir (sabaq/sabqi/manzil)
+ * - intervalDays & nextReviewDate = hasil replay jadwal (Fase 3)
  *
  * Semua tulis dikirim lewat satu `db.batch()` — satu round-trip HTTP, bukan
  * satu INSERT per halaman. Versi lama melakukan `await insert` di dalam loop,
@@ -18,33 +23,48 @@ import type * as schema from "@/db/schema";
 export async function recomputeMemorizationStatus(
   db: LibSQLDatabase<typeof schema>,
 ): Promise<void> {
-  const logs = await db.select().from(sessionsLog).orderBy(sessionsLog.date, sessionsLog.id);
+  const [logs, settings] = await Promise.all([
+    db.select().from(sessionsLog).orderBy(sessionsLog.date, sessionsLog.id),
+    loadSettings(db),
+  ]);
 
-  const sabaqFirst = new Map<number, string>();
-  const sabaqLast = new Map<number, string>();
-  const lastReview = new Map<number, string>();
+  const schedules = replayPageSchedule(
+    logs.map((log) => ({
+      id: log.id,
+      date: log.date,
+      pageNumber: log.pageNumber,
+      type: log.type as SessionType,
+      quality: log.quality as Quality,
+    })),
+    settings.intervalCapDays,
+  );
 
-  for (const log of logs) {
-    lastReview.set(log.pageNumber, log.date);
-    if (log.type === "sabaq") {
-      if (!sabaqFirst.has(log.pageNumber)) sabaqFirst.set(log.pageNumber, log.date);
-      sabaqLast.set(log.pageNumber, log.quality);
-    }
-  }
-
-  const writes = [...sabaqLast].map(([pageNumber, quality]) => {
-    const memorizedAt = new Date(sabaqFirst.get(pageNumber)!);
-    const lastReviewedAt = new Date(lastReview.get(pageNumber)!);
+  const writes = [...schedules.values()].map((schedule) => {
+    const memorizedAt = new Date(schedule.memorizedAt);
+    const lastReviewedAt = new Date(schedule.lastReviewedAt);
     return db
       .insert(memorizationStatus)
-      .values({ pageNumber, status: quality, memorizedAt, lastReviewedAt })
+      .values({
+        pageNumber: schedule.pageNumber,
+        status: schedule.status,
+        memorizedAt,
+        lastReviewedAt,
+        intervalDays: schedule.intervalDays,
+        nextReviewDate: schedule.nextReviewDate,
+      })
       .onConflictDoUpdate({
         target: memorizationStatus.pageNumber,
-        set: { status: quality, memorizedAt, lastReviewedAt },
+        set: {
+          status: schedule.status,
+          memorizedAt,
+          lastReviewedAt,
+          intervalDays: schedule.intervalDays,
+          nextReviewDate: schedule.nextReviewDate,
+        },
       });
   });
 
-  const memorizedPageNumbers = [...sabaqLast.keys()];
+  const memorizedPageNumbers = [...schedules.keys()];
   const prune =
     memorizedPageNumbers.length === 0
       ? db.delete(memorizationStatus)
