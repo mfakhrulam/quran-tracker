@@ -1,7 +1,8 @@
 import { unstable_cache } from "next/cache";
 import { memorizationStatus } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
-import type { StatusRow } from "./progress";
+
+export type CachedStatusRow = typeof memorizationStatus.$inferSelect;
 
 /**
  * Tag untuk seluruh data turunan yang berubah setiap kali `sessions_log`
@@ -17,14 +18,15 @@ export const PROGRESS_TAG = "progress";
  * Netlify Durable Cache (otomatis aktif untuk Next Runtime 5.5+) dengan
  * revalidasi berbasis tag.
  *
- * Angka 604 halaman dan status per halaman hanya berubah saat ada setoran
- * baru, sehingga cache ini praktis selalu hit pada navigasi antar halaman.
+ * Seluruh kolom ikut di-cache (bukan hanya pageNumber+status): halaman
+ * murajaah dan dashboard butuh `memorizedAt`, `intervalDays`, dan
+ * `nextReviewDate` untuk menghitung jadwal tanpa query tambahan. Isinya hanya
+ * berubah saat ada setoran baru, sehingga cache ini praktis selalu hit pada
+ * navigasi antar halaman.
  */
 export const getCachedStatuses = unstable_cache(
-  async (): Promise<StatusRow[]> => {
-    return getDb()
-      .select({ pageNumber: memorizationStatus.pageNumber, status: memorizationStatus.status })
-      .from(memorizationStatus);
+  async (): Promise<CachedStatusRow[]> => {
+    return getDb().select().from(memorizationStatus);
   },
   ["memorization-status"],
   { tags: [PROGRESS_TAG], revalidate: 300 },
