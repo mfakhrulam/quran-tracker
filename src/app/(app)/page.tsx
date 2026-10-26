@@ -3,7 +3,9 @@ import { and, desc, eq } from "drizzle-orm";
 import { ArrowRight, BookmarkSimple, Flame, Plus } from "@phosphor-icons/react/dist/ssr";
 import { goals, restDays, sessionsLog } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
-import { computeProgress } from "@/lib/tracker/progress";
+import { PAGE_LITES } from "@/lib/mushaf/pages";
+import { getCachedStatuses } from "@/lib/tracker/progress-cache";
+import { summarizeProgress } from "@/lib/tracker/progress";
 import { computeProjection, STATUS_LABELS } from "@/lib/tracker/projection";
 import { computeStreak, formatDateID, formatDateShortID, todayISO } from "@/lib/tracker/date";
 import { QUALITY_COLORS, QUALITY_LABELS, QUALITY_TEXT, SESSION_TYPE_LABELS } from "@/lib/tracker/quality";
@@ -34,14 +36,23 @@ export default async function DashboardPage() {
   const db = getDb();
   const today = todayISO();
 
-  const [progress, khatam, rest, recent, allDates] = await Promise.all([
-    computeProgress(db),
-    db.select().from(goals).where(and(eq(goals.type, "khatam"), eq(goals.active, true))),
-    db.select().from(restDays),
-    db.select().from(sessionsLog).orderBy(desc(sessionsLog.date), desc(sessionsLog.id)).limit(5),
-    db.selectDistinct({ date: sessionsLog.date }).from(sessionsLog),
+  // Dua hal berjalan paralel:
+  //  1. `getCachedStatuses()` — dibaca dari Netlify Durable Cache, jadi pada
+  //     navigasi normal tidak menyentuh Turso sama sekali.
+  //  2. `db.batch()` — semua query sisanya dalam SATU round-trip HTTP.
+  // Sebelumnya halaman ini butuh 3 round-trip berurutan (auth di layout, pages,
+  // lalu memorization_status) yang di Netlify lintas region jadi ~900ms.
+  const [progressRows, [khatam, rest, recent, allDates]] = await Promise.all([
+    getCachedStatuses(),
+    db.batch([
+      db.select().from(goals).where(and(eq(goals.type, "khatam"), eq(goals.active, true))),
+      db.select().from(restDays),
+      db.select().from(sessionsLog).orderBy(desc(sessionsLog.date), desc(sessionsLog.id)).limit(5),
+      db.selectDistinct({ date: sessionsLog.date }).from(sessionsLog),
+    ]),
   ]);
 
+  const progress = summarizeProgress(PAGE_LITES, progressRows);
   const restDates = rest.map((r) => r.date);
   const goal = khatam[0];
 

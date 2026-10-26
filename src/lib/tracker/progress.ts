@@ -1,6 +1,7 @@
 import type { LibSQLDatabase } from "drizzle-orm/libsql";
-import { pages, memorizationStatus } from "@/db/schema";
+import { memorizationStatus } from "@/db/schema";
 import type * as schema from "@/db/schema";
+import { PAGE_LITES, type PageLite } from "@/lib/mushaf/pages";
 import { QUALITY_LEVELS } from "./quality";
 
 export interface JuzProgress {
@@ -17,9 +18,22 @@ export interface ProgressSummary {
   byJuz: JuzProgress[];
 }
 
-export async function computeProgress(db: LibSQLDatabase<typeof schema>): Promise<ProgressSummary> {
-  const allPages = await db.select({ pageNumber: pages.pageNumber, juz: pages.juz }).from(pages);
-  const statuses = await db.select().from(memorizationStatus);
+export interface StatusRow {
+  pageNumber: number;
+  status: string;
+}
+
+/**
+ * Fungsi murni: tidak menyentuh DB sama sekali.
+ *
+ * Dipisah dari `computeProgress` supaya pemanggil yang sudah mengambil
+ * `memorization_status` lewat `db.batch()` bisa menghitung ringkasan tanpa
+ * round-trip tambahan.
+ */
+export function summarizeProgress(
+  allPages: PageLite[],
+  statuses: StatusRow[],
+): ProgressSummary {
   const statusByPage = new Map(statuses.map((s) => [s.pageNumber, s.status]));
 
   const byStatus: Record<string, number> = { belum: 0 };
@@ -48,4 +62,21 @@ export async function computeProgress(db: LibSQLDatabase<typeof schema>): Promis
     byStatus,
     byJuz,
   };
+}
+
+/**
+ * Versi yang mengambil status sendiri (1 round-trip).
+ *
+ * `allPages` default ke metadata mushaf yang dibundel, sehingga tidak ada
+ * query ke tabel `pages` sama sekali. Pemanggil yang butuh basis halaman lain
+ * (mis. unit test dengan fixture kecil) boleh mengopernya eksplisit.
+ */
+export async function computeProgress(
+  db: LibSQLDatabase<typeof schema>,
+  allPages: PageLite[] = PAGE_LITES,
+): Promise<ProgressSummary> {
+  const statuses = await db
+    .select({ pageNumber: memorizationStatus.pageNumber, status: memorizationStatus.status })
+    .from(memorizationStatus);
+  return summarizeProgress(allPages, statuses);
 }

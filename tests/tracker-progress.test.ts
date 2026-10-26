@@ -46,12 +46,21 @@ beforeAll(async () => {
 afterAll(() => { ctx.client.close(); safeRm(dir); });
 
 describe("computeProgress", () => {
+  // `pages` kini berasal dari modul statis, jadi unit test mengoper basis
+  // halaman eksplisit — yang diuji adalah logika agregasi, bukan sumber data.
+  const fixture = [
+    { pageNumber: 1, juz: 1 },
+    { pageNumber: 2, juz: 1 },
+    { pageNumber: 3, juz: 1 },
+    { pageNumber: 22, juz: 2 },
+  ];
+
   it("menghitung hafalan & persen dari status != belum", async () => {
     await ctx.db.insert(memorizationStatus).values([
       { pageNumber: 1, status: "mutqin" },
       { pageNumber: 2, status: "lemah" },
     ]);
-    const p = await computeProgress(ctx.db);
+    const p = await computeProgress(ctx.db, fixture);
     expect(p.totalPages).toBe(4);
     expect(p.memorizedPages).toBe(2);
     expect(p.percent).toBeCloseTo(0.5);
@@ -60,10 +69,14 @@ describe("computeProgress", () => {
     expect(p.byStatus.lemah).toBe(1);
   });
   it("mengelompokkan per juz", async () => {
-    const p = await computeProgress(ctx.db);
+    const p = await computeProgress(ctx.db, fixture);
     const juz1 = p.byJuz.find((j) => j.juz === 1);
     const juz2 = p.byJuz.find((j) => j.juz === 2);
     expect(juz1).toMatchObject({ total: 3, memorized: 2 });
     expect(juz2).toMatchObject({ total: 1, memorized: 0 });
+  });
+  it("default memakai 604 halaman mushaf yang dibundel", async () => {
+    const p = await computeProgress(ctx.db);
+    expect(p.totalPages).toBe(604);
   });
 });

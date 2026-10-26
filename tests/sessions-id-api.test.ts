@@ -38,7 +38,12 @@ beforeAll(async () => {
   ctx = createDb(`file:${join(dir, "s.db")}`);
   await migrate(ctx.db, { migrationsFolder: "./drizzle" });
   const inserted = await ctx.db.insert(users).values({ username: "owner", passwordHash: "x" }).returning();
-  await ctx.db.insert(pages).values({ pageNumber: 1, juz: 1, surahStart: 1, ayahStart: 1, surahEnd: 1, ayahEnd: 7 });
+  await ctx.db.insert(pages).values([
+    { pageNumber: 1, juz: 1, surahStart: 1, ayahStart: 1, surahEnd: 1, ayahEnd: 7 },
+    // Halaman 500 ikut di-seed: `memorization_status.page_number` punya FK ke
+    // `pages`, jadi baris ini harus ada agar recompute tidak melanggar constraint.
+    { pageNumber: 500, juz: 30, surahStart: 114, ayahStart: 1, surahEnd: 114, ayahEnd: 6 },
+  ]);
   const { token } = await createSession(ctx.db, inserted[0].id);
   cookie = `${SESSION_COOKIE}=${token}`;
   process.env.DATABASE_URL = `file:${join(dir, "s.db")}`;
@@ -116,7 +121,25 @@ describe("sessions/[id] API", () => {
     expect(res.status).toBe(400);
   });
 
-  it("400 saat PATCH ke halaman yang tidak ada", async () => {
+  it("400 saat PATCH ke halaman di luar 1..604", async () => {
+    const { createSessionLogHandler } = await import("@/app/api/sessions/handler");
+    const { updateSessionLogHandler } = await import("@/app/api/sessions/[id]/handler");
+    const created = await createSessionLogHandler(new Request("http://localhost/api/sessions", {
+      method: "POST", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 1, type: "sabaq", quality: "baru" }),
+    }));
+    const { session } = await created.json();
+    const res = await updateSessionLogHandler(new Request(`http://localhost/api/sessions/${session.id}`, {
+      method: "PATCH", headers: { "content-type": "application/json", cookie },
+      body: JSON.stringify({ date: "2026-10-10", pageNumber: 605, type: "sabaq", quality: "baru" }),
+    }), session.id);
+    expect(res.status).toBe(400);
+  });
+
+  // Validasi halaman memakai katalog mushaf statis (604 halaman), bukan tabel
+  // `pages` di DB. Halaman 500 tidak ada di fixture `pages` tes ini, tapi tetap
+  // harus diterima — itu bukti validasi tidak lagi bergantung pada round-trip DB.
+  it("menerima halaman mushaf yang tidak ada di fixture DB", async () => {
     const { createSessionLogHandler } = await import("@/app/api/sessions/handler");
     const { updateSessionLogHandler } = await import("@/app/api/sessions/[id]/handler");
     const created = await createSessionLogHandler(new Request("http://localhost/api/sessions", {
@@ -128,7 +151,9 @@ describe("sessions/[id] API", () => {
       method: "PATCH", headers: { "content-type": "application/json", cookie },
       body: JSON.stringify({ date: "2026-10-10", pageNumber: 500, type: "sabaq", quality: "baru" }),
     }), session.id);
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.session.pageNumber).toBe(500);
   });
 
   it("PATCH tanpa durationMin mempertahankan nilai lama", async () => {

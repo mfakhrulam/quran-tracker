@@ -1,7 +1,8 @@
 import { eq } from "drizzle-orm";
-import { pages, sessionsLog } from "@/db/schema";
+import { sessionsLog } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { findPage } from "@/lib/mushaf/pages";
 import { recomputeMemorizationStatus } from "@/lib/tracker/derive-status";
 import { todayISO } from "@/lib/tracker/date";
 import { sessionLogInput } from "@/lib/tracker/validation";
@@ -22,10 +23,10 @@ export async function updateSessionLogHandler(req: Request, id: number): Promise
   const existing = await db.select().from(sessionsLog).where(eq(sessionsLog.id, id));
   if (existing.length === 0) return Response.json({ error: "Log tidak ditemukan" }, { status: 404 });
 
-  const page = await db.select().from(pages).where(eq(pages.pageNumber, data.pageNumber));
-  if (page.length === 0) return Response.json({ error: "Halaman tidak ditemukan" }, { status: 400 });
+  const page = findPage(data.pageNumber);
+  if (!page) return Response.json({ error: "Halaman tidak ditemukan" }, { status: 400 });
 
-  const ayahError = checkAyahRange(data, page[0]);
+  const ayahError = checkAyahRange(data, page);
   if (ayahError) return Response.json({ error: ayahError }, { status: 400 });
 
   const set: Record<string, unknown> = {

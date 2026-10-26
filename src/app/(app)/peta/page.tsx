@@ -1,18 +1,17 @@
-import { pages, memorizationStatus } from "@/db/schema";
-import { getDb } from "@/lib/auth/db";
-import { computeProgress } from "@/lib/tracker/progress";
+import { MUSHAF_PAGES } from "@/lib/mushaf/pages";
+import { getCachedStatuses } from "@/lib/tracker/progress-cache";
+import { summarizeProgress } from "@/lib/tracker/progress";
 import ProgressMap from "@/components/ProgressMap";
 
 export default async function PetaPage() {
-  const db = getDb();
-  const [allPages, statuses, progress] = await Promise.all([
-    db.select().from(pages).orderBy(pages.pageNumber),
-    db.select().from(memorizationStatus),
-    computeProgress(db),
-  ]);
+  // `pages` dari modul statis + status dari cache ber-tag = nol round-trip ke
+  // Turso untuk metadata mushaf. Versi lama mengambil `pages` dan
+  // `memorization_status` dua kali (langsung + lewat computeProgress).
+  const statuses = await getCachedStatuses();
+  const progress = summarizeProgress(MUSHAF_PAGES, statuses);
   const statusByPage = new Map(statuses.map((s) => [s.pageNumber, s.status]));
 
-  const data = allPages.map((p) => ({
+  const data = MUSHAF_PAGES.map((p) => ({
     pageNumber: p.pageNumber,
     juz: p.juz,
     surahStart: p.surahStart,

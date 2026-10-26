@@ -1,8 +1,9 @@
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
-import { pages, sessionsLog } from "@/db/schema";
+import { sessionsLog } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { findPage } from "@/lib/mushaf/pages";
 import { recomputeMemorizationStatus } from "@/lib/tracker/derive-status";
 import { todayISO, isValidISODate } from "@/lib/tracker/date";
 import { sessionLogInput } from "@/lib/tracker/validation";
@@ -52,10 +53,10 @@ export async function createSessionLogHandler(req: Request): Promise<Response> {
   if (data.date > todayISO()) return Response.json({ error: "Tanggal tidak boleh di masa depan" }, { status: 400 });
 
   const db = getDb();
-  const page = await db.select().from(pages).where(eq(pages.pageNumber, data.pageNumber));
-  if (page.length === 0) return Response.json({ error: "Halaman tidak ditemukan" }, { status: 400 });
+  const page = findPage(data.pageNumber);
+  if (!page) return Response.json({ error: "Halaman tidak ditemukan" }, { status: 400 });
 
-  const ayahError = checkAyahRange(data, page[0]);
+  const ayahError = checkAyahRange(data, page);
   if (ayahError) return Response.json({ error: ayahError }, { status: 400 });
 
   const inserted = await db

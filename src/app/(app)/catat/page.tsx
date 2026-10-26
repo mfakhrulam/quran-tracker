@@ -1,14 +1,14 @@
 import SessionForm from "@/components/SessionForm";
 import { SURAHS } from "@/lib/mushaf/surahs";
-import { pages } from "@/db/schema";
-import { getDb } from "@/lib/auth/db";
+import { MUSHAF_PAGES } from "@/lib/mushaf/pages";
 import { todayISO } from "@/lib/tracker/date";
 
-export default async function CatatPage() {
-  const allPages = await getDb()
-    .select({ pageNumber: pages.pageNumber, juz: pages.juz, surahStart: pages.surahStart })
-    .from(pages)
-    .orderBy(pages.pageNumber);
+export default function CatatPage() {
+  const allPages = MUSHAF_PAGES.map((p) => ({
+    pageNumber: p.pageNumber,
+    juz: p.juz,
+    surahStart: p.surahStart,
+  }));
 
   return (
     <div className="space-y-5">
