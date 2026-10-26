@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { and, desc, eq } from "drizzle-orm";
 import { ArrowRight, BookmarkSimple, Flame, Plus } from "@phosphor-icons/react/dist/ssr";
-import { goals, restDays, sessionsLog } from "@/db/schema";
+import { goals, restDays, sessionsLog, settings as settingsTable } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { PAGE_LITES } from "@/lib/mushaf/pages";
+import { parseSettings } from "@/lib/settings";
+import { buildDailyPlan } from "@/lib/tracker/daily";
 import { getCachedStatuses } from "@/lib/tracker/progress-cache";
 import { summarizeProgress } from "@/lib/tracker/progress";
 import { computeProjection, STATUS_LABELS } from "@/lib/tracker/projection";
@@ -42,17 +44,25 @@ export default async function DashboardPage() {
   //  2. `db.batch()` — semua query sisanya dalam SATU round-trip HTTP.
   // Sebelumnya halaman ini butuh 3 round-trip berurutan (auth di layout, pages,
   // lalu memorization_status) yang di Netlify lintas region jadi ~900ms.
-  const [progressRows, [khatam, rest, recent, allDates]] = await Promise.all([
+  //
+  // Kartu murajaah memakai baris status dari cache + log hari ini + settings
+  // dari batch yang sama, lalu dihitung lewat `buildDailyPlan` yang murni.
+  // Memanggil `loadDailyTasks` di sini akan menambah satu round-trip.
+  const [progressRows, [khatam, rest, recent, allDates, todayLogs, settingRows]] = await Promise.all([
     getCachedStatuses(),
     db.batch([
       db.select().from(goals).where(and(eq(goals.type, "khatam"), eq(goals.active, true))),
       db.select().from(restDays),
       db.select().from(sessionsLog).orderBy(desc(sessionsLog.date), desc(sessionsLog.id)).limit(5),
       db.selectDistinct({ date: sessionsLog.date }).from(sessionsLog),
+      db.select().from(sessionsLog).where(eq(sessionsLog.date, today)),
+      db.select({ key: settingsTable.key, value: settingsTable.value }).from(settingsTable),
     ]),
   ]);
 
   const progress = summarizeProgress(PAGE_LITES, progressRows);
+  const settings = parseSettings(settingRows);
+  const dailyPlan = buildDailyPlan({ statuses: progressRows, logs: todayLogs, settings }, today);
   const restDates = rest.map((r) => r.date);
   const goal = khatam[0];
 
@@ -295,6 +305,60 @@ export default async function DashboardPage() {
           )}
         </section>
       </div>
+
+      {/* Murajaah hari ini ---------------------------------------------- */}
+      <section
+        className="card rise p-5 sm:p-6"
+        style={{ "--rise-delay": "240ms" } as React.CSSProperties}
+      >
+        <div className="flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 className="eyebrow">Murajaah hari ini</h2>
+            <p className="mt-1.5 flex items-baseline gap-1.5">
+              <span className="tnum text-[24px] font-extrabold leading-none tracking-tight text-ink">
+                {dailyPlan.done.length}
+              </span>
+              <span className="text-sm font-semibold text-ink-faint">
+                / {dailyPlan.scheduled + dailyPlan.done.length} halaman
+              </span>
+            </p>
+          </div>
+          <Link href="/murajaah" className="btn btn-secondary h-9 px-3 text-[13px]">
+            Buka murajaah
+            <ArrowRight size={13} weight="bold" />
+          </Link>
+        </div>
+
+        {dailyPlan.scheduled === 0 ? (
+          <p className="mt-3 text-[13px] leading-relaxed text-ink-soft">
+            {dailyPlan.manzilTotal === 0
+              ? "Belum ada hafalan lama yang masuk jalur murajaah."
+              : "Semua yang jatuh tempo hari ini sudah diulang. Alhamdulillah."}
+          </p>
+        ) : (
+          <div className="mt-3 flex flex-wrap items-center gap-1.5">
+            {[...dailyPlan.sabqi, ...dailyPlan.manzil].slice(0, 10).map((task) => (
+              <span
+                key={task.pageNumber}
+                className={`chip ${QUALITY_COLORS[task.status] ?? QUALITY_COLORS.belum} ${
+                  QUALITY_TEXT[task.status] ?? QUALITY_TEXT.belum
+                }`}
+              >
+                {task.pageNumber}
+              </span>
+            ))}
+            {dailyPlan.scheduled > 10 && (
+              <span className="text-[12px] font-medium text-ink-faint">
+                +{dailyPlan.scheduled - 10} lagi
+              </span>
+            )}
+            <span className="ml-auto text-[12px] font-medium text-ink-faint">
+              {dailyPlan.sabqi.length} {settings.labels.sabqi.toLowerCase()} ·{" "}
+              {dailyPlan.manzil.length} {settings.labels.manzil.toLowerCase()}
+            </span>
+          </div>
+        )}
+      </section>
 
       {projection && (
         <p className="pb-2 text-center text-[12.5px] leading-relaxed text-ink-soft">

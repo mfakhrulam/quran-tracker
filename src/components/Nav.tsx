@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
+  ArrowsClockwise,
   BookOpenText,
   ClockCounterClockwise,
+  GearSix,
   MapTrifold,
   SquaresFour,
   Target,
@@ -14,6 +16,7 @@ import {
 const LINKS = [
   { href: "/", label: "Ringkasan", short: "Ringkasan", Icon: SquaresFour },
   { href: "/catat", label: "Catat", short: "Catat", Icon: BookOpenText },
+  { href: "/murajaah", label: "Murajaah", short: "Murajaah", Icon: ArrowsClockwise },
   { href: "/riwayat", label: "Riwayat", short: "Riwayat", Icon: ClockCounterClockwise },
   { href: "/peta", label: "Peta", short: "Peta", Icon: MapTrifold },
   { href: "/target", label: "Target", short: "Target", Icon: Target },
@@ -62,16 +65,29 @@ export default function Nav() {
             })}
           </nav>
 
-          <form action="/api/auth/logout" method="post" className="ml-auto">
-            <button
-              type="submit"
-              className="btn btn-ghost h-9 px-2.5 text-[13px]"
-              aria-label="Keluar dari akun"
+          <div className="ml-auto flex items-center gap-1">
+            <Link
+              href="/pengaturan"
+              aria-label="Pengaturan"
+              aria-current={isActive(pathname, "/pengaturan") ? "page" : undefined}
+              className={[
+                "btn btn-ghost h-9 w-9 p-0",
+                isActive(pathname, "/pengaturan") ? "text-brand-700" : "",
+              ].join(" ")}
             >
-              <SignOut size={16} />
-              <span className="hidden sm:inline">Keluar</span>
-            </button>
-          </form>
+              <GearSix size={17} weight={isActive(pathname, "/pengaturan") ? "fill" : "regular"} />
+            </Link>
+            <form action="/api/auth/logout" method="post">
+              <button
+                type="submit"
+                className="btn btn-ghost h-9 px-2.5 text-[13px]"
+                aria-label="Keluar dari akun"
+              >
+                <SignOut size={16} />
+                <span className="hidden sm:inline">Keluar</span>
+              </button>
+            </form>
+          </div>
         </div>
       </header>
 
