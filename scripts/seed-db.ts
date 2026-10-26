@@ -17,6 +17,7 @@ export const DEFAULT_SETTINGS: Record<string, string> = {
   sabqi_window_days: "14",
   manzil_cycle_days: "7",
   daily_load_limit: "2",
+  interval_cap_days: "30",
   label_sabaq: "Sabaq",
   label_sabqi: "Sabqi",
   label_manzil: "Manzil",

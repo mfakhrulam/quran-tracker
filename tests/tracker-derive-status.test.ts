@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import v8 from "node:v8";
 import vm from "node:vm";
+import { eq } from "drizzle-orm";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import { createDb } from "@/db/client";
 import { pages, sessionsLog, memorizationStatus } from "@/db/schema";
@@ -74,5 +75,67 @@ describe("recomputeMemorizationStatus", () => {
     await ctx.db.delete(sessionsLog);
     await recomputeMemorizationStatus(ctx.db);
     expect(await ctx.db.select().from(memorizationStatus)).toHaveLength(0);
+  });
+
+  it("mengisi interval dan tanggal review berikutnya", async () => {
+    await ctx.db.insert(sessionsLog).values([
+      { date: "2026-10-01", pageNumber: 1, type: "sabaq", quality: "lancar" },
+      { date: "2026-10-02", pageNumber: 1, type: "sabqi", quality: "mutqin" },
+    ]);
+    await recomputeMemorizationStatus(ctx.db);
+    const [row] = await ctx.db.select().from(memorizationStatus);
+    expect(row.intervalDays).toBe(2);
+    expect(row.nextReviewDate).toBe("2026-10-04");
+  });
+
+  it("review lemah mereset interval ke 1", async () => {
+    await ctx.db.insert(sessionsLog).values([
+      { date: "2026-10-01", pageNumber: 1, type: "sabaq", quality: "mutqin" },
+      { date: "2026-10-03", pageNumber: 1, type: "sabqi", quality: "mutqin" },
+      { date: "2026-10-07", pageNumber: 1, type: "manzil", quality: "lemah" },
+    ]);
+    await recomputeMemorizationStatus(ctx.db);
+    const [row] = await ctx.db.select().from(memorizationStatus);
+    expect(row.intervalDays).toBe(1);
+    expect(row.nextReviewDate).toBe("2026-10-08");
+    expect(row.status).toBe("mutqin");
+  });
+
+  it("menghapus log memundurkan jadwal kembali", async () => {
+    await ctx.db.insert(sessionsLog).values([
+      { date: "2026-10-01", pageNumber: 1, type: "sabaq", quality: "lancar" },
+      { date: "2026-10-02", pageNumber: 1, type: "sabqi", quality: "mutqin" },
+    ]);
+    await recomputeMemorizationStatus(ctx.db);
+    await ctx.db.delete(sessionsLog).where(eq(sessionsLog.date, "2026-10-02"));
+    await recomputeMemorizationStatus(ctx.db);
+    const [row] = await ctx.db.select().from(memorizationStatus);
+    expect(row.intervalDays).toBe(1);
+    expect(row.nextReviewDate).toBe("2026-10-02");
+  });
+
+  it("mengisi jadwal untuk banyak halaman dalam satu recompute", async () => {
+    await ctx.db.insert(pages).values(
+      Array.from({ length: 20 }, (_, i) => ({
+        pageNumber: i + 3,
+        juz: 1,
+        surahStart: 1,
+        ayahStart: 1,
+        surahEnd: 1,
+        ayahEnd: 7,
+      })),
+    );
+    await ctx.db.insert(sessionsLog).values(
+      Array.from({ length: 20 }, (_, i) => ({
+        date: "2026-10-01",
+        pageNumber: i + 3,
+        type: "sabaq",
+        quality: "lancar",
+      })),
+    );
+    await recomputeMemorizationStatus(ctx.db);
+    const rows = await ctx.db.select().from(memorizationStatus);
+    expect(rows).toHaveLength(20);
+    expect(rows.every((r) => r.intervalDays === 1 && r.nextReviewDate === "2026-10-02")).toBe(true);
   });
 });
