@@ -21,7 +21,7 @@
     "@node-rs/argon2": "^2.2.2",
     "@phosphor-icons/react": "^2.1.10",
     "drizzle-orm": "^0.45.4",
-    "next": "^15.5.28",
+    "next": "^16.4.3",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "zod": "^4.6.7"
@@ -33,7 +33,7 @@
     "@types/react-dom": "^19.3.0",
     "drizzle-kit": "^0.31.11",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^15.5.28",
+    "eslint-config-next": "^16.4.3",
     "postcss": "^8.5.29",
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
