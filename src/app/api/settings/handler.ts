@@ -1,6 +1,7 @@
 import { settings as settingsTable } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { guardAndReadJson } from "@/lib/http/csrf";
 import { LABEL_KEYS, NUMERIC_KEYS, loadSettings, type AppSettings } from "@/lib/settings";
 import { settingsPatchInput } from "@/lib/tracker/validation";
 
@@ -15,7 +16,9 @@ export async function updateSettingsHandler(req: Request): Promise<Response> {
   const userId = await getSessionUserId(req);
   if (userId === null) return Response.json({ error: "Belum masuk" }, { status: 401 });
 
-  const parsed = settingsPatchInput.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  const parsed = settingsPatchInput.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
 
   const entries: { key: string; value: string }[] = [];

@@ -5,15 +5,21 @@ import { getDb } from "@/lib/auth/db";
 import { getDummyHash, verifyPassword } from "@/lib/auth/password";
 import { createSession, SESSION_COOKIE } from "@/lib/auth/session";
 import { checkRateLimit, getClientKey, recordFailure, resetRateLimit } from "@/lib/auth/rate-limit";
+import { guardAndReadJson } from "@/lib/http/csrf";
 
-const bodySchema = z.object({ username: z.string().min(1), password: z.string().min(1) });
+const bodySchema = z.object({
+  username: z.string().min(1).max(64),
+  password: z.string().min(1).max(256),
+});
 
 export async function loginHandler(req: Request): Promise<Response> {
   const ip = getClientKey(req);
   if (!checkRateLimit(ip).allowed) {
     return Response.json({ error: "Terlalu banyak percobaan. Coba lagi nanti." }, { status: 429 });
   }
-  const parsed = bodySchema.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  const parsed = bodySchema.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
 
   const db = getDb();

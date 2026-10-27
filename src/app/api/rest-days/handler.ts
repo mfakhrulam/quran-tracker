@@ -2,13 +2,16 @@ import { eq } from "drizzle-orm";
 import { restDays } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { guardAndReadJson } from "@/lib/http/csrf";
 import { restDayInput } from "@/lib/tracker/validation";
 
 export async function createRestDayHandler(req: Request): Promise<Response> {
   const userId = await getSessionUserId(req);
   if (userId === null) return Response.json({ error: "Belum masuk" }, { status: 401 });
 
-  const parsed = restDayInput.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  const parsed = restDayInput.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
 
   const db = getDb();
@@ -26,7 +29,9 @@ export async function deleteRestDayHandler(req: Request): Promise<Response> {
   const userId = await getSessionUserId(req);
   if (userId === null) return Response.json({ error: "Belum masuk" }, { status: 401 });
 
-  const parsed = restDayInput.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  const parsed = restDayInput.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
 
   await getDb().delete(restDays).where(eq(restDays.date, parsed.data.date));
