@@ -3,9 +3,11 @@ import { z } from "zod";
 import { sessionsLog } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { guardAndReadJson } from "@/lib/http/csrf";
 import { findPage } from "@/lib/mushaf/pages";
 import { recomputeMemorizationStatus } from "@/lib/tracker/derive-status";
 import { todayISO, isValidISODate } from "@/lib/tracker/date";
+import { checkSabaqAnchor } from "@/lib/tracker/sabaq-anchor";
 import { sessionLogInput } from "@/lib/tracker/validation";
 
 const listQuery = z.object({
@@ -46,7 +48,9 @@ export async function createSessionLogHandler(req: Request): Promise<Response> {
   const userId = await getSessionUserId(req);
   if (userId === null) return Response.json({ error: "Belum masuk" }, { status: 401 });
 
-  const parsed = sessionLogInput.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  const parsed = sessionLogInput.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
   const data = parsed.data;
 
@@ -58,6 +62,11 @@ export async function createSessionLogHandler(req: Request): Promise<Response> {
 
   const ayahError = checkAyahRange(data, page);
   if (ayahError) return Response.json({ error: ayahError }, { status: 400 });
+
+  if (data.type === "sabaq") {
+    const anchorError = await checkSabaqAnchor(db, data.pageNumber, data.date);
+    if (anchorError) return Response.json({ error: anchorError }, { status: 400 });
+  }
 
   const inserted = await db
     .insert(sessionsLog)

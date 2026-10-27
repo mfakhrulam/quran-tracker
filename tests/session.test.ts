@@ -7,7 +7,7 @@ import vm from "node:vm";
 import { migrate } from "drizzle-orm/libsql/migrator";
 import { createDb } from "@/db/client";
 import { users } from "@/db/schema";
-import { createSession, verifySession, deleteSession, hashToken } from "@/lib/auth/session";
+import { createSession, verifySession, deleteSession, hashToken, MAX_SESSIONS_PER_USER } from "@/lib/auth/session";
 
 function forceGc(): void {
   v8.setFlagsFromString("--expose_gc");
@@ -64,5 +64,35 @@ describe("session", () => {
     const { token } = await createSession(ctx.db, userId);
     await deleteSession(ctx.db, token);
     expect(await verifySession(ctx.db, token)).toBeNull();
+  });
+
+  // audit F-10: sesi lama dulu menumpuk selamanya dan tetap berlaku 30 hari.
+  it("membatasi jumlah sesi aktif per pengguna", async () => {
+    const { sessions } = await import("@/db/schema");
+    const { eq } = await import("drizzle-orm");
+    await ctx.db.delete(sessions);
+    const tokens: string[] = [];
+    for (let i = 0; i < MAX_SESSIONS_PER_USER + 3; i++) {
+      tokens.push((await createSession(ctx.db, userId)).token);
+    }
+    const rows = await ctx.db.select().from(sessions).where(eq(sessions.userId, userId));
+    expect(rows.length).toBe(MAX_SESSIONS_PER_USER);
+    // Sesi terbaru tetap valid; yang paling lama sudah dipangkas.
+    expect(await verifySession(ctx.db, tokens[tokens.length - 1])).not.toBeNull();
+    expect(await verifySession(ctx.db, tokens[0])).toBeNull();
+  });
+
+  it("menghapus sesi kedaluwarsa saat membuat sesi baru", async () => {
+    const { sessions } = await import("@/db/schema");
+    const { eq } = await import("drizzle-orm");
+    await ctx.db.delete(sessions);
+    const { token: stale } = await createSession(ctx.db, userId);
+    await ctx.db
+      .update(sessions)
+      .set({ expiresAt: new Date(Date.now() - 1000) })
+      .where(eq(sessions.tokenHash, hashToken(stale)));
+    await createSession(ctx.db, userId);
+    const rows = await ctx.db.select().from(sessions).where(eq(sessions.userId, userId));
+    expect(rows.some((r) => r.tokenHash === hashToken(stale))).toBe(false);
   });
 });

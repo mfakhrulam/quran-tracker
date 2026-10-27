@@ -41,6 +41,20 @@ export const restDayInput = z.object({
   reason: z.string().max(500).optional(),
 });
 
+/**
+ * Batas panjang array, diperiksa SEBELUM Zod memvalidasi elemen.
+ *
+ * audit F-02: `.max(50)` pada `z.array()` baru dievaluasi setelah seluruh
+ * elemen divalidasi, jadi body 7 MB berisi 200k item tidak valid menghasilkan
+ * 400.001 issue (~157 MB heap) sebelum ditolak. `itemsWithinLimit` menolak
+ * lebih awal sehingga Zod tidak pernah menyentuh array besar.
+ */
+export const MAX_MURAJA_ITEMS = 50;
+
+export function itemsWithinLimit(items: unknown, max = MAX_MURAJA_ITEMS): boolean {
+  return Array.isArray(items) && items.length >= 1 && items.length <= max;
+}
+
 export const murajaahItemInput = z.object({
   pageNumber: z.number().int().min(1).max(604),
   quality: z.enum(QUALITY_LEVELS),
@@ -48,7 +62,7 @@ export const murajaahItemInput = z.object({
 
 export const murajaahCompleteInput = z.object({
   date: isoDate,
-  items: z.array(murajaahItemInput).min(1).max(50),
+  items: z.array(murajaahItemInput).min(1).max(MAX_MURAJA_ITEMS),
 });
 
 export const settingsPatchInput = z

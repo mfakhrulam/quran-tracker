@@ -21,7 +21,7 @@ Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Sudah me
    Copy-Item .env.example .env
    ```
 
-   Minimal isi `SESSION_SECRET` dengan string acak 32+ karakter — ganti placeholder `ganti-dengan-secret` di `.env.example` dengan hasil `openssl rand -base64 32`. Untuk lokal, `DATABASE_URL` biarkan `file:./local.db` dan `DATABASE_AUTH_TOKEN` kosong. Atur `OWNER_USERNAME` dan `OWNER_PASSWORD` untuk akun pemilik.
+   Minimal yang perlu diisi adalah `DATABASE_URL`. Untuk lokal, biarkan `file:./local.db` dan `DATABASE_AUTH_TOKEN` kosong. Atur `OWNER_USERNAME` dan `OWNER_PASSWORD` untuk akun pemilik. Tidak ada secret yang perlu dibuat: sesi memakai token acak yang disimpan sebagai hash di tabel `sessions`.
 
 3. Buat migrasi (bila skema berubah) dan jalankan migrasi ke database lokal:
 
@@ -72,7 +72,6 @@ Aplikasi pelacak hafalan Al-Qur'an berbasis 604 halaman mushaf Madinah. Sudah me
 
    - `DATABASE_URL` = `libsql://<db>.turso.io`
    - `DATABASE_AUTH_TOKEN` = token dari langkah sebelumnya
-   - `SESSION_SECRET` = string acak 32+ karakter
    - `OWNER_USERNAME` dan `OWNER_PASSWORD` = akun pemilik (hanya dipakai saat seed)
 
 3. **Jalankan migrasi dan seed terhadap Turso** dengan env produksi. Setel `DATABASE_URL` dan `DATABASE_AUTH_TOKEN` ke nilai Turso, lalu:
@@ -107,7 +106,11 @@ Perintah ini mengisi `interval_days` dan `next_review_date` untuk halaman yang s
 
 ## Batasan
 
-- **Rate limiter in-memory per-instance.** Pembatasan percobaan login disimpan di memori proses, sehingga pada Vercel serverless (banyak instance) hanya bersifat best-effort. Store bersama (DB/Upstash) direncanakan pada fase berikutnya.
+- **Rate limiter in-memory per-instance.** Pembatasan percobaan login disimpan di memori proses, sehingga pada serverless (banyak instance) hanya bersifat best-effort. Kunci limiter memakai header IP dari platform (`x-nf-client-connection-ip`) sehingga tidak dapat dipalsukan klien; batas 10.000 bucket mencegah memori tumbuh tanpa batas. Store bersama (DB/Upstash) direncanakan pada fase berikutnya.
+
+## Catatan keamanan
+
+Hasil security audit ada di `docs/security/2026-10-26-audit.md`. Ringkasnya: endpoint mutasi menolak body di atas 64 KB, wajib `Content-Type: application/json`, dan menolak `Origin` lintas situs; header keamanan dipasang global dari `next.config.ts`; sesi kedaluwarsa dipangkas dan dibatasi 5 sesi aktif per pengguna.
 
 ## Atribusi Data
 

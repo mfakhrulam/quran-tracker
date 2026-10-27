@@ -3,6 +3,7 @@ import { z } from "zod";
 import { goals } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { guardAndReadJson } from "@/lib/http/csrf";
 
 const patchSchema = z.object({ active: z.boolean() });
 
@@ -11,7 +12,9 @@ export async function updateGoalHandler(req: Request, id: number): Promise<Respo
   if (userId === null) return Response.json({ error: "Belum masuk" }, { status: 401 });
   if (!Number.isInteger(id) || id <= 0) return Response.json({ error: "ID tidak valid" }, { status: 400 });
 
-  const parsed = patchSchema.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  const parsed = patchSchema.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
 
   const db = getDb();

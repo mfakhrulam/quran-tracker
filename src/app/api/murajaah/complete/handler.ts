@@ -2,12 +2,13 @@ import { inArray } from "drizzle-orm";
 import { memorizationStatus, sessionsLog, settings as settingsTable } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { guardAndReadJson } from "@/lib/http/csrf";
 import { findPage } from "@/lib/mushaf/pages";
 import { parseSettings } from "@/lib/settings";
 import { recomputeMemorizationStatus } from "@/lib/tracker/derive-status";
 import { daysBetween, todayISO } from "@/lib/tracker/date";
 import type { Quality, SessionType } from "@/lib/tracker/quality";
-import { murajaahCompleteInput } from "@/lib/tracker/validation";
+import { itemsWithinLimit, murajaahCompleteInput } from "@/lib/tracker/validation";
 
 /**
  * Mencatat murajaah untuk satu atau banyak halaman sekaligus.
@@ -20,7 +21,14 @@ export async function completeMurajaahHandler(req: Request): Promise<Response> {
   const userId = await getSessionUserId(req);
   if (userId === null) return Response.json({ error: "Belum masuk" }, { status: 401 });
 
-  const parsed = murajaahCompleteInput.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  // Tolak panjang array sebelum Zod menyentuh elemen (audit F-02).
+  const rawItems = (body.value as { items?: unknown } | null)?.items;
+  if (!itemsWithinLimit(rawItems)) {
+    return Response.json({ error: "Data tidak valid" }, { status: 400 });
+  }
+  const parsed = murajaahCompleteInput.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
   const { date } = parsed.data;
 

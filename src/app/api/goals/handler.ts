@@ -2,6 +2,7 @@ import { and, eq } from "drizzle-orm";
 import { goals } from "@/db/schema";
 import { getDb } from "@/lib/auth/db";
 import { getSessionUserId } from "@/lib/auth/guard";
+import { guardAndReadJson } from "@/lib/http/csrf";
 import { goalInput } from "@/lib/tracker/validation";
 
 export async function listGoalsHandler(req: Request): Promise<Response> {
@@ -15,7 +16,9 @@ export async function createGoalHandler(req: Request): Promise<Response> {
   const userId = await getSessionUserId(req);
   if (userId === null) return Response.json({ error: "Belum masuk" }, { status: 401 });
 
-  const parsed = goalInput.safeParse(await req.json().catch(() => null));
+  const body = await guardAndReadJson(req);
+  if (!body.ok) return Response.json({ error: body.error }, { status: body.status });
+  const parsed = goalInput.safeParse(body.value);
   if (!parsed.success) return Response.json({ error: "Data tidak valid" }, { status: 400 });
   const data = parsed.data;
 
