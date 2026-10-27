@@ -49,7 +49,7 @@ describe("logout handler", () => {
   it("redirect 303 ke /login (tanpa cookie)", async () => {
     const res = await callLogout();
     expect(res.status).toBe(303);
-    expect(res.headers.get("location")).toMatch(/\/login$/);
+    expect(res.headers.get("location")).toBe("/login");
   });
   it("menghapus cookie sesi via Set-Cookie", async () => {
     const res = await callLogout();
@@ -61,7 +61,26 @@ describe("logout handler", () => {
   it("tetap redirect saat cookie sesi ada", async () => {
     const res = await callLogout("session=token-tidak-ada");
     expect(res.status).toBe(303);
-    expect(res.headers.get("location")).toMatch(/\/login$/);
+    expect(res.headers.get("location")).toBe("/login");
     expect(res.headers.get("set-cookie")).toContain("Max-Age=0");
+  });
+  // audit F-12: Location relatif supaya Host dari klien tidak dipakai membangun origin.
+  it("tidak memakai Host request untuk membangun Location", async () => {
+    const { logoutHandler } = await import("@/app/api/auth/logout/handler");
+    const res = await logoutHandler(
+      new Request("http://evil.example/api/auth/logout", { method: "POST" }),
+    );
+    expect(res.headers.get("location")).toBe("/login");
+  });
+  // audit F-08: form lintas situs tidak boleh menghapus sesi pengguna.
+  it("menolak logout dari Origin lintas situs", async () => {
+    const { logoutHandler } = await import("@/app/api/auth/logout/handler");
+    const res = await logoutHandler(
+      new Request("http://localhost/api/auth/logout", {
+        method: "POST",
+        headers: { origin: "https://evil.example" },
+      }),
+    );
+    expect(res.status).toBe(403);
   });
 });
